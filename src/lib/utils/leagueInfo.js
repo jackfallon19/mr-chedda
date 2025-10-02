@@ -3,7 +3,7 @@ export const leagueID = "1250549223967948800"; // your league ID
 export const leagueName = "Chedda Cheese"; // your league name
 export const dues = 100; // (optional) used in template constitution page
 export const dynasty = false; // true for dynasty leagues, false for redraft and keeper
-export const enableBlog = false; // requires VITE_CONTENTFUL_ACCESS_TOKEN and VITE_CONTENTFUL_SPACE environment variables
+export const enableBlog = true; // requires VITE_CONTENTFUL_ACCESS_TOKEN and VITE_CONTENTFUL_SPACE environment variables
 
 /*   STEP 2   */
 export const homepageText = `
@@ -28,70 +28,224 @@ https://github.com/nmelhado/league-page/blob/master/TRAINING_WHEELS.md#ii-adding
 
 export const managers = [
     {
-      "roster": 1,  // ID of the roster that the manager manages (look at the order of the power rankings graph)
-      "name": "Your Name",
-      "tookOver": 2020, // (optional) used if a manager took over a team, delete this line or change to null otherwise
-      "location": "Brooklyn", // (optional)
-      "bio": "Lorem ipsum...",
-      "photo": "/managers/name.jpg", // square ratio recommended (no larger than 500x500)
-      "fantasyStart": 2014, // (optional) when did the manager start playing fantasy football
-      "favoriteTeam": "nyj", // (optional) favorite NFL team, (follows convention: nyj, sea, mia, etc.) MUST BE LOWERCASE
-      "mode": "Win Now", // (optional) 'Win Now', 'Dynasty', or 'Rebuild' (anything else and you will need to add a new png to /static/ similar to the 'Rebuild.png' and 'Win Now.png' currently in there)
+      "managerID": "887911442844925952",
+      "name": "jfaoro",
+      "tookOver": null,
+      "location": null,
+      "bio": "Consistently forgets to set his lineup with the reliability of a Swiss watch running backwards. At this point, his bench players have Stockholm syndrome from never seeing the field. The league's only manager who treats 'active roster' as more of a suggestion than a requirement.",
+      "photo": "/managers/name.jpg",
+      "fantasyStart": null,
+      "favoriteTeam": null,
+      "mode": "Win Now",
       "rival": {
-        name: "Rival", // Can be anything (usually your rival's name)
-        link: 6, // manager array number within this array, or null to link back to all managers page
-        image: "/managers/rival.jpg", // either a specific manager photo or '/managers/everyone.png' or '/managers/question.png'
+        name: "Rival",
+        link: null,
+        image: "/managers/everyone.png",
       },
-      "favoritePlayer": 1426, // (optional) this corresponds to the Sleeper player ID (https://api.sleeper.app/v1/players/nfl)
-      "valuePosition": "WR", // (optional) Favorite position (QB, WR, RB, TE, etc.)
-      "rookieOrVets": "Rookies", // (optional) 'Rookies' or 'Vets' (anything else and you will need to add a new png to /static/ similar to the 'Rookies.png' and 'Vets.png' currently in there)
+      "favoritePlayer": null,
+      "valuePosition": null,
+      "rookieOrVets": null,
       "philosophy": "Your fantasy team's philosophy",
-      "tradingScale": 10, // 1 - 10
-      "preferredContact": "Text", // 'Text', 'WhatsApp', 'Sleeper', 'Email', 'Phone', 'Discord', and 'Carrier Pigeon' are currently supplied in the template
+      "tradingScale": 10,
+      "preferredContact": "Sleeper",
     },
     {
-      "roster": 2,  // ID of the roster that the manager manages (look at the order of the power rankings graph)
-      "name": "Your Name",
-      "tookOver": 2020, // (optional) used if a manager took over a team, delete this line or change to null otherwise
-      "location": "Brooklyn", // (optional)
-      "bio": "Lorem ipsum...",
-      "photo": "/managers/name.jpg", // square ratio recommended (no larger than 500x500)
-      "fantasyStart": 2014, // (optional) when did the manager start playing fantasy football
-      "favoriteTeam": "nyj", // (optional) favorite NFL team, (follows convention: nyj, sea, mia, etc.) MUST BE LOWERCASE
-      "mode": "Win Now", // (optional) 'Win Now', 'Dynasty', or 'Rebuild' (anything else and you will need to add a new png to /static/ similar to the 'Rebuild.png' and 'Win Now.png' currently in there)
+      "managerID": "990520804859232256",
+      "name": "tigbits711",
+      "tookOver": null,
+      "location": null,
+      "bio": "Our fearless Commissioner, ruling like Stalin with an iron fist and zero democratic process. A perennial threat who's always close but never close enough—destined to wear the dress forever but never hoist the trophy. The league's been trying to boot him out of office, but good luck getting him to give up power. Dictator for life, runner-up for eternity.",
+      "photo": "/managers/name.jpg",
+      "fantasyStart": null,
+      "favoriteTeam": null,
+      "mode": "Win Now",
       "rival": {
-        name: "Rival", // Can be anything (usually your rival's name)
-        link: 6, // manager array number within this array, or null to link back to all managers page
-        image: "/managers/rival.jpg", // either a specific manager photo or '/managers/everyone.png' or '/managers/question.png'
+        name: "Rival",
+        link: null,
+        image: "/managers/everyone.png",
       },
-      "favoritePlayer": 1426, // (optional) this corresponds to the Sleeper player ID (https://api.sleeper.app/v1/players/nfl)
-      "valuePosition": "WR", // (optional) Favorite position (QB, WR, RB, TE, etc.)
-      "rookieOrVets": "Rookies", // (optional) 'Rookies' or 'Vets' (anything else and you will need to add a new png to /static/ similar to the 'Rookies.png' and 'Vets.png' currently in there)
+      "favoritePlayer": null,
+      "valuePosition": null,
+      "rookieOrVets": null,
       "philosophy": "Your fantasy team's philosophy",
-      "tradingScale": 10, // 1 - 10
-      "preferredContact": "Text", // 'Text', 'WhatsApp', 'Sleeper', 'Email', 'Phone', 'Discord', and 'Carrier Pigeon' are currently supplied in the template
+      "tradingScale": 10,
+      "preferredContact": "Sleeper",
     },
     {
-      "roster": 3,  // ID of the roster that the manager manages (look at the order of the power rankings graph)
-      "name": "Your Name",
-      "tookOver": 2020, // (optional) used if a manager took over a team, delete this line or change to null otherwise
-      "location": "Brooklyn", // (optional)
-      "bio": "Lorem ipsum...",
-      "photo": "/managers/name.jpg", // square ratio recommended (no larger than 500x500)
-      "fantasyStart": 2014, // (optional) when did the manager start playing fantasy football
-      "favoriteTeam": "nyj", // (optional) favorite NFL team, (follows convention: nyj, sea, mia, etc.) MUST BE LOWERCASE
-      "mode": "Win Now", // (optional) 'Win Now', 'Dynasty', or 'Rebuild' (anything else and you will need to add a new png to /static/ similar to the 'Rebuild.png' and 'Win Now.png' currently in there)
+      "managerID": "990522132113240064",
+      "name": "ChuckLeady",
+      "tookOver": null,
+      "location": null,
+      "bio": "The league's most notorious trade fleece artist and reigning champion. Has convinced more managers to make terrible trades than a used car salesman on commission. If Chuck texts you about a 'fair deal,' check your roster immediately—you're already down a first-rounder.",
+      "photo": "/managers/name.jpg",
+      "fantasyStart": null,
+      "favoriteTeam": null,
+      "mode": "Win Now",
       "rival": {
-        name: "Rival", // Can be anything (usually your rival's name)
-        link: 6, // manager array number within this array, or null to link back to all managers page
-        image: "/managers/rival.jpg", // either a specific manager photo or '/managers/everyone.png' or '/managers/question.png'
+        name: "Rival",
+        link: null,
+        image: "/managers/everyone.png",
       },
-      "favoritePlayer": 1426, // (optional) this corresponds to the Sleeper player ID (https://api.sleeper.app/v1/players/nfl)
-      "valuePosition": "WR", // (optional) Favorite position (QB, WR, RB, TE, etc.)
-      "rookieOrVets": "Rookies", // (optional) 'Rookies' or 'Vets' (anything else and you will need to add a new png to /static/ similar to the 'Rookies.png' and 'Vets.png' currently in there)
+      "favoritePlayer": null,
+      "valuePosition": null,
+      "rookieOrVets": null,
       "philosophy": "Your fantasy team's philosophy",
-      "tradingScale": 10, // 1 - 10
-      "preferredContact": "Text", // 'Text', 'WhatsApp', 'Sleeper', 'Email', 'Phone', 'Discord', and 'Carrier Pigeon' are currently supplied in the template
+      "tradingScale": 10,
+      "preferredContact": "Sleeper",
+    },
+    {
+      "managerID": "990524585852354560",
+      "name": "ryebread00",
+      "tookOver": null,
+      "location": null,
+      "bio": "The king of the reverse jinx—came close in Year 1 and has been trying to speak losses into existence ever since. Narrator: it worked too well. Was knocking on the championship door once, but that door slammed shut harder than his playoff hopes. Won't be back any time soon, but he'll tell you he's definitely losing this week.",
+      "photo": "/managers/name.jpg",
+      "fantasyStart": null,
+      "favoriteTeam": null,
+      "mode": "Win Now",
+      "rival": {
+        name: "Rival",
+        link: null,
+        image: "/managers/everyone.png",
+      },
+      "favoritePlayer": null,
+      "valuePosition": null,
+      "rookieOrVets": null,
+      "philosophy": "Your fantasy team's philosophy",
+      "tradingScale": 10,
+      "preferredContact": "Sleeper",
+    },
+    {
+      "managerID": "990704123299336192",
+      "name": "jenright19",
+      "tookOver": null,
+      "location": null,
+      "bio": "Makes moves so questionable that the chat needs a dedicated 'WTF Enright' channel. His boy Clyborn may come out of retirement—which is either a brilliant 4D chess move or further proof that we need an intervention. Spoiler alert: it's never 4D chess.",
+      "photo": "/managers/name.jpg",
+      "fantasyStart": null,
+      "favoriteTeam": null,
+      "mode": "Win Now",
+      "rival": {
+        name: "Rival",
+        link: null,
+        image: "/managers/everyone.png",
+      },
+      "favoritePlayer": null,
+      "valuePosition": null,
+      "rookieOrVets": null,
+      "philosophy": "Your fantasy team's philosophy",
+      "tradingScale": 10,
+      "preferredContact": "Sleeper",
+    },
+    {
+      "managerID": "990753572016943104",
+      "name": "Nolanwest",
+      "tookOver": null,
+      "location": null,
+      "bio": "We need some Ryder Cup merch. That's it. That's the bio. Seriously though, we need merch.",
+      "photo": "/managers/name.jpg",
+      "fantasyStart": null,
+      "favoriteTeam": null,
+      "mode": "Win Now",
+      "rival": {
+        name: "Rival",
+        link: null,
+        image: "/managers/everyone.png",
+      },
+      "favoritePlayer": null,
+      "valuePosition": null,
+      "rookieOrVets": null,
+      "philosophy": "Your fantasy team's philosophy",
+      "tradingScale": 10,
+      "preferredContact": "Sleeper",
+    },
+    {
+      "managerID": "991503715234271232",
+      "name": "billm8",
+      "tookOver": null,
+      "location": null,
+      "bio": "The most bipolar team in the league. Either dropping 170 points and crushing dreams, or limping to 95 and making everyone wonder if he even has a roster. There is no middle ground. It's either feast or famine, championship-level dominance or tank-mode catastrophe. Consistency? Never heard of her.",
+      "photo": "/managers/name.jpg",
+      "fantasyStart": null,
+      "favoriteTeam": null,
+      "mode": "Win Now",
+      "rival": {
+        name: "Rival",
+        link: null,
+        image: "/managers/everyone.png",
+      },
+      "favoritePlayer": null,
+      "valuePosition": null,
+      "rookieOrVets": null,
+      "philosophy": "Your fantasy team's philosophy",
+      "tradingScale": 10,
+      "preferredContact": "Sleeper",
+    },
+    {
+      "managerID": "991882566162558976",
+      "name": "jwhill",
+      "tookOver": null,
+      "location": null,
+      "bio": "Wore the dress last year and is speedrunning toward fashion history. On pace to become our first back-to-back dress wearer—a dubious honor nobody wants but he's absolutely earning. Some people learn from their mistakes. Jhill? He's committed to the bit.",
+      "photo": "/managers/name.jpg",
+      "fantasyStart": null,
+      "favoriteTeam": null,
+      "mode": "Win Now",
+      "rival": {
+        name: "Rival",
+        link: null,
+        image: "/managers/everyone.png",
+      },
+      "favoritePlayer": null,
+      "valuePosition": null,
+      "rookieOrVets": null,
+      "philosophy": "Your fantasy team's philosophy",
+      "tradingScale": 10,
+      "preferredContact": "Sleeper",
+    },
+    {
+      "managerID": "992186573034688512",
+      "name": "CamMacIntosh",
+      "tookOver": null,
+      "location": null,
+      "bio": "Known for grabbing some muff in his spare time. That's it. That's the entire scouting report. Legend status achieved off one photo that will never die.",
+      "photo": "/managers/name.jpg",
+      "fantasyStart": null,
+      "favoriteTeam": null,
+      "mode": "Win Now",
+      "rival": {
+        name: "Rival",
+        link: null,
+        image: "/managers/everyone.png",
+      },
+      "favoritePlayer": null,
+      "valuePosition": null,
+      "rookieOrVets": null,
+      "philosophy": "Your fantasy team's philosophy",
+      "tradingScale": 10,
+      "preferredContact": "Sleeper",
+    },
+    {
+      "managerID": "992838327420121088",
+      "name": "jafallon",
+      "tookOver": null,
+      "location": null,
+      "bio": "His roster should be sponsored by a hospital. No one is safe from the injury bug—starters, bench players, the waterboy. If you're on Fallon's team, you're one snap away from IR. At this point his team doctors deserve their own roster spot.",
+      "photo": "/managers/name.jpg",
+      "fantasyStart": null,
+      "favoriteTeam": null,
+      "mode": "Win Now",
+      "rival": {
+        name: "Rival",
+        link: null,
+        image: "/managers/everyone.png",
+      },
+      "favoritePlayer": null,
+      "valuePosition": null,
+      "rookieOrVets": null,
+      "philosophy": "Your fantasy team's philosophy",
+      "tradingScale": 10,
+      "preferredContact": "Sleeper",
     },
   ]
   
