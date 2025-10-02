@@ -7,8 +7,22 @@ export const enableBlog = false; // requires VITE_CONTENTFUL_ACCESS_TOKEN and VI
 
 /*   STEP 2   */
 export const homepageText = `
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-  <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+  <p>Gentlemen,</p>
+  <p>Gentlemen,
+
+Welcome to the offical Chedda Cheese website. This is where we crawl out of Sleeper’s bland-ass reports and serve up something meater than the steak I hope eat with Mr. Chedda at dinna one day.
+
+Here you’ll get:
+
+Game insights (a.k.a. why your team is going to win - reverse jinx will live here as well)
+
+Injury reports (Fallon’s name WILL pop up more than Only Fans girls in Twitter comment sections)
+
+The Weekly Parlay (guaranteed to hit right once we stop bettting on Boos' players)
+
+Trade updates (watch your dumb ass get fleeced and then still defend the move like you’re a genius - shoutout Enright I cannot wait to have Rome for a decade)
+
+This isn’t just fantasy football. This is the place where egos die, trash talk thrives, and one of you clowns wears a dress at Wrigley on a beuatiful day in June.</p>
   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
   <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
