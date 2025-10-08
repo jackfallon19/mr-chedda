@@ -32,6 +32,11 @@ export const tabs = [
         key: 'league_info',
         children: [
             {
+                icon: 'casino',
+                label: 'Weekly Parlay History',
+                dest: '/parlay-history',
+            },
+            {
                 icon: 'storage',
                 label: 'Rosters',
                 dest: '/rosters',
