@@ -10,6 +10,22 @@
 
         allSeasons.forEach(season => {
             season.weeks?.forEach(week => {
+                // Only charge the person who threw the parlay
+                if (week.thrownBy) {
+                    if (!stats[week.thrownBy.managerID]) {
+                        stats[week.thrownBy.managerID] = {
+                            managerID: week.thrownBy.managerID,
+                            managerName: week.thrownBy.managerName,
+                            totalSpent: 0,
+                            wins: 0,
+                            losses: 0,
+                            participated: 0,
+                            parlayWins: 0,
+                        };
+                    }
+                    stats[week.thrownBy.managerID].totalSpent += 10;
+                }
+
                 week.picks.forEach(pick => {
                     if (!stats[pick.managerID]) {
                         stats[pick.managerID] = {
@@ -25,7 +41,6 @@
 
                     if (pick.result !== "N/A") {
                         stats[pick.managerID].participated++;
-                        stats[pick.managerID].totalSpent += 10;
 
                         if (pick.result === "win") {
                             stats[pick.managerID].wins++;
