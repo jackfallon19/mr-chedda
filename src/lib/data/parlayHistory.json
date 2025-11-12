@@ -4,9 +4,9 @@
       "year": "2025",
       "weeks": [
         {
-          "week": 5,
-          "seasonWeek": "Season 2025 Week 5",
-          "date": "2025-10-05",
+          "week": 1,
+          "seasonWeek": "Season 2025 Week 1",
+          "date": "2025-09-02",
           "parlayResult": "loss",
           "payout": 0,
           "thrownBy": {
@@ -14,65 +14,243 @@
             "managerName": "jafallon"
           },
           "picks": [
+            { "managerID": "991882566162558976", "managerName": "jwhill", "pick": "Bengals ML", "result": "win" },
+            { "managerID": "887911442844925952", "managerName": "jfaoro", "pick": "Kyren Anytime TD", "result": "loss" },
+            { "managerID": "990522132113240064", "managerName": "ChuckLeady", "pick": "Gibbs Anytime TD", "result": "win" },
+            { "managerID": "990524585852354560", "managerName": "ryebread00", "pick": "Bears/Lions Over 46.5", "result": "win" },
+            { "managerID": "992838327420121088", "managerName": "jafallon", "pick": "Jonathan Taylor Anytime TD", "result": "win" },
+            { "managerID": "991503715234271232", "managerName": "billm8", "pick": "Rome Odunze 50+ Yards", "result": "win" },
+            { "managerID": "992186573034688512", "managerName": "CamMacIntosh", "pick": "ETN 80+ Rush/Rec", "result": "win" },
+            { "managerID": "991503715234271232", "managerName": "billm8", "pick": "Javonte Williams Anytime TD", "result": "win" },
+            { "managerID": "990753572016943104", "managerName": "Nolanwest", "pick": "Derrick Henry Anytime TD", "result": "loss" }
+          ]
+        },
+        {
+          "week": 2,
+          "seasonWeek": "Season 2025 Week 2",
+          "date": "2025-09-09",
+          "parlayResult": "pending",
+          "payout": 0,
+          "thrownBy": {
+            "managerID": "992838327420121088",
+            "managerName": "jafallon"
+          },
+          "picks": []
+        },
+        {
+          "week": 3,
+          "seasonWeek": "Season 2025 Week 3",
+          "date": "2025-09-16",
+          "parlayResult": "loss",
+          "payout": 0,
+          "thrownBy": {
+            "managerID": "991503715234271232",
+            "managerName": "billm8"
+          },
+          "picks": [
+            { "managerID": "990522132113240064", "managerName": "ChuckLeady", "pick": "Vikings ML", "result": "win" },
+            { "managerID": "990524585852354560", "managerName": "ryebread00", "pick": "Jets ML", "result": "loss" },
+            { "managerID": "991503715234271232", "managerName": "billm8", "pick": "Travis Hunter 40+ Receiving", "result": "loss" },
+            { "managerID": "991503715234271232", "managerName": "billm8", "pick": "Bears/Cowboys Over", "result": "win" },
+            { "managerID": "991882566162558976", "managerName": "jwhill", "pick": "Bucky Irving Anytime TD", "result": "loss" },
+            { "managerID": "990753572016943104", "managerName": "Nolanwest", "pick": "Bijan Robinson Anytime TD", "result": "loss" }
+          ]
+        },
+        {
+          "week": 4,
+          "seasonWeek": "Season 2025 Week 4",
+          "date": "2025-09-23",
+          "parlayResult": "loss",
+          "payout": 0,
+          "thrownBy": {
+            "managerID": "992838327420121088",
+            "managerName": "jafallon"
+          },
+          "picks": [
+            { "managerID": "991503715234271232", "managerName": "billm8", "pick": "Patriots ML", "result": "win" },
+            { "managerID": "990522132113240064", "managerName": "ChuckLeady", "pick": "Ravens ML", "result": "loss" },
+            { "managerID": "991882566162558976", "managerName": "jwhill", "pick": "Keon Coleman 40+", "result": "win" },
+            { "managerID": "992838327420121088", "managerName": "jafallon", "pick": "Pearsall 70+", "result": "loss" },
+            { "managerID": "990524585852354560", "managerName": "ryebread00", "pick": "Falcons/Commanders Over", "result": "win" },
+            { "managerID": "887911442844925952", "managerName": "jfaoro", "pick": "Jaguars +3.5", "result": "win" },
+            { "managerID": "990704123299336192", "managerName": "jenright19", "pick": "Caleb Williams 250+", "result": "loss" },
+            { "managerID": "992186573034688512", "managerName": "CamMacIntosh", "pick": "Bears ML", "result": "win" },
+            { "managerID": "991503715234271232", "managerName": "billm8", "pick": "Judkins Prop", "result": "win" }
+          ]
+        },
+        {
+          "week": 5,
+          "seasonWeek": "Season 2025 Week 5",
+          "date": "2025-09-30",
+          "parlayResult": "loss",
+          "payout": 0,
+          "thrownBy": {
+            "managerID": "991503715234271232",
+            "managerName": "billm8"
+          },
+          "picks": [
+            { "managerID": "991503715234271232", "managerName": "billm8", "pick": "Saints ML", "result": "win" },
+            { "managerID": "990753572016943104", "managerName": "Nolanwest", "pick": "Derrick Henry Anytime TD", "result": "win" },
+            { "managerID": "992838327420121088", "managerName": "jafallon", "pick": "Javonte Williams Anytime TD", "result": "win" },
+            { "managerID": "990524585852354560", "managerName": "ryebread00", "pick": "Jonathan Taylor Anytime TD", "result": "win" },
+            { "managerID": "990522132113240064", "managerName": "ChuckLeady", "pick": "Lions -9.5", "result": "win" },
+            { "managerID": "991882566162558976", "managerName": "jwhill", "pick": "JK Dobbins Anytime TD", "result": "win" },
+            { "managerID": "887911442844925952", "managerName": "jfaoro", "pick": "Kincaid Anytime TD", "result": "loss" },
+            { "managerID": "992186573034688512", "managerName": "CamMacIntosh", "pick": "ETN 2+ TDs", "result": "loss" }
+          ]
+        },
+        {
+          "week": 6,
+          "seasonWeek": "Season 2025 Week 6",
+          "date": "2025-10-07",
+          "parlayResult": "loss",
+          "payout": 0,
+          "thrownBy": {
+            "managerID": "992186573034688512",
+            "managerName": "CamMacIntosh"
+          },
+          "picks": [
+            { "managerID": "990524585852354560", "managerName": "ryebread00", "pick": "Chiefs/Lions Over", "result": "loss" },
+            { "managerID": "991882566162558976", "managerName": "jwhill", "pick": "DJ 60+", "result": "loss" },
+            { "managerID": "991503715234271232", "managerName": "billm8", "pick": "Seahawks -4.5", "result": "win" },
+            { "managerID": "990522132113240064", "managerName": "ChuckLeady", "pick": "Bengals +14.5", "result": "win" },
+            { "managerID": "990753572016943104", "managerName": "Nolanwest", "pick": "JSN 80+", "result": "win" },
+            { "managerID": "991503715234271232", "managerName": "billm8", "pick": "Zaccheaus 25+", "result": "loss" },
+            { "managerID": "992186573034688512", "managerName": "CamMacIntosh", "pick": "ETN Anytime TD", "result": "loss" },
+            { "managerID": "992838327420121088", "managerName": "jafallon", "pick": "Rachaad White Anytime TD", "result": "win" },
+            { "managerID": "887911442844925952", "managerName": "jfaoro", "pick": "Gibbs Anytime TD", "result": "loss" },
+            { "managerID": "990704123299336192", "managerName": "jenright19", "pick": "Jonathan Taylor Anytime TD", "result": "win" }
+          ]
+        },
+        {
+          "week": 7,
+          "seasonWeek": "Season 2025 Week 7",
+          "date": "2025-10-14",
+          "parlayResult": "loss",
+          "payout": 0,
+          "thrownBy": {
+            "managerID": "992838327420121088",
+            "managerName": "jafallon"
+          },
+          "picks": [
+            { "managerID": "991882566162558976", "managerName": "jwhill", "pick": "Luther Burden Anytime TD", "result": "loss" },
+            { "managerID": "992186573034688512", "managerName": "CamMacIntosh", "pick": "Rome Odunze Anytime TD", "result": "loss" },
+            { "managerID": "991503715234271232", "managerName": "billm8", "pick": "Mayer Over", "result": "loss" },
+            { "managerID": "887911442844925952", "managerName": "jfaoro", "pick": "Browns Under", "result": "loss" },
+            { "managerID": "990522132113240064", "managerName": "ChuckLeady", "pick": "Rico Dowdle 60+", "result": "win" },
+            { "managerID": "992838327420121088", "managerName": "jafallon", "pick": "Charbonnet Anytime TD", "result": "win" },
+            { "managerID": "990753572016943104", "managerName": "Nolanwest", "pick": "Justin Jefferson Anytime TD", "result": "loss" },
+            { "managerID": "990524585852354560", "managerName": "ryebread00", "pick": "Colts ML", "result": "win" }
+          ]
+        },
+        {
+          "week": 8,
+          "seasonWeek": "Season 2025 Week 8",
+          "date": "2025-10-21",
+          "parlayResult": "loss",
+          "payout": 0,
+          "thrownBy": {
+            "managerID": "991882566162558976",
+            "managerName": "jwhill"
+          },
+          "picks": [
+            { "managerID": "887911442844925952", "managerName": "jfaoro", "pick": "Bijan Robinson Anytime TD", "result": "loss" },
+            { "managerID": "990704123299336192", "managerName": "jenright19", "pick": "Jonathan Taylor Anytime TD", "result": "win" },
+            { "managerID": "990522132113240064", "managerName": "ChuckLeady", "pick": "Steelers ML @ Packers", "result": "loss" },
+            { "managerID": "990524585852354560", "managerName": "ryebread00", "pick": "Bears ML @ Ravens", "result": "loss" },
+            { "managerID": "992838327420121088", "managerName": "jafallon", "pick": "Caleb Williams Anytime TD @ Ravens", "result": "loss" },
+            { "managerID": "992186573034688512", "managerName": "CamMacIntosh", "pick": "Cowboys ML @ Broncos", "result": "loss" },
+            { "managerID": "991882566162558976", "managerName": "jwhill", "pick": "George Kittle Anytime TD @ Houston", "result": "win" },
+            { "managerID": "991503715234271232", "managerName": "billm8", "pick": "Browns Spread @ Patriots", "result": "loss" }
+          ]
+        },
+        {
+          "week": 9,
+          "seasonWeek": "Season 2025 Week 9",
+          "date": "2025-10-28",
+          "parlayResult": "loss",
+          "payout": 0,
+          "thrownBy": {
+            "managerID": "990753572016943104",
+            "managerName": "Nolanwest"
+          },
+          "picks": [
+            { "managerID": "992186573034688512", "managerName": "CamMacIntosh", "pick": "Ladd McConkey Anytime TD @ Tennessee", "result": "loss" },
+            { "managerID": "887911442844925952", "managerName": "jfaoro", "pick": "Javonte Williams 70+ Rushing Yards vs Arizona", "result": "win" },
+            { "managerID": "990704123299336192", "managerName": "jenright19", "pick": "Jonathan Taylor Anytime TD @ Steelers", "result": "loss" },
+            { "managerID": "990524585852354560", "managerName": "ryebread00", "pick": "Minnesota +9.5 vs Detroit", "result": "win" },
+            { "managerID": "990522132113240064", "managerName": "ChuckLeady", "pick": "Bills ML vs Chiefs", "result": "win" },
+            { "managerID": "991882566162558976", "managerName": "jwhill", "pick": "James Cook Anytime TD vs Chiefs", "result": "loss" },
+            { "managerID": "991503715234271232", "managerName": "billm8", "pick": "Bears ML @ Cincinnati", "result": "win" },
+            { "managerID": "991503715234271232", "managerName": "billm8", "pick": "Rome Odunze Anytime TD vs Cincinnati", "result": "loss" },
+            { "managerID": "990753572016943104", "managerName": "Nolanwest", "pick": "Puka Nacua Anytime TD vs Saints", "result": "win" },
+            { "managerID": "992838327420121088", "managerName": "jafallon", "pick": "Alvin Kamara Anytime TD @ Rams", "result": "loss" }
+          ]
+        },
+        {
+          "week": 10,
+          "seasonWeek": "Season 2025 Week 10",
+          "date": "2025-11-10",
+          "parlayResult": "loss",
+          "payout": 0,
+          "thrownBy": {
+            "managerID": "992186573034688512",
+            "managerName": "CamMacIntosh"
+          },
+          "picks": [
             {
-              "managerID": "887911442844925952",
-              "managerName": "jfaoro",
-              "pick": "Dalton Kincaid ATTD vs Patriots",
+              "managerID": "992186573034688512",
+              "managerName": "CamMacIntosh",
+              "pick": "Bucs ML vs New England",
               "result": "loss"
             },
             {
               "managerID": "990520804859232256",
               "managerName": "tigbits711",
-              "pick": "Saints ML vs Giants",
+              "pick": "Texans ML vs Jacksonville",
               "result": "win"
             },
             {
               "managerID": "990522132113240064",
               "managerName": "ChuckLeady",
-              "pick": "Lions -9.5 @ Bengals",
-              "result": "win"
-            },
-            {
-              "managerID": "990524585852354560",
-              "managerName": "ryebread00",
-              "pick": "Jonathan Taylor ATTD vs Raiders",
-              "result": "win"
-            },
-            {
-              "managerID": "990704123299336192",
-              "managerName": "jenright19",
-              "pick": "N/A",
-              "result": "N/A"
-            },
-            {
-              "managerID": "990753572016943104",
-              "managerName": "Nolanwest",
-              "pick": "Derrick Henry ATTD vs Texans",
+              "pick": "Lions -8 @ Washington",
               "result": "win"
             },
             {
               "managerID": "991503715234271232",
               "managerName": "billm8",
-              "pick": "N/A",
-              "result": "N/A"
-            },
-            {
-              "managerID": "991882566162558976",
-              "managerName": "jwhill",
-              "pick": "JK Dobbins ATTD @ Eagles",
+              "pick": "Bears over 23.5 total vs New York Giants",
               "result": "win"
             },
             {
-              "managerID": "992186573034688512",
-              "managerName": "CamMacIntosh",
-              "pick": "Travis Etienne 2+ TDs vs Chiefs",
-              "result": "loss"
+              "managerID": "887911442844925952",
+              "managerName": "jfaoro",
+              "pick": "Colston Loveland 25+ receiving yards vs New York Giants",
+              "result": "win"
             },
             {
               "managerID": "992838327420121088",
               "managerName": "jafallon",
-              "pick": "Javonte Williams ATTD @ Jets",
+              "pick": "Ravens -3.5 @ Minnesota",
               "result": "win"
+            },
+            {
+              "managerID": "991882566162558976",
+              "managerName": "jwhill",
+              "pick": "Josh Allen ATTD @ Miami",
+              "result": "loss"
+            },
+            {
+              "managerID": "990704123299336192",
+              "managerName": "jenright19",
+              "pick": "Jonathan Taylor ATTD vs Atlanta (Munich)",
+              "result": "win"
+            },
+            {
+              "managerID": "990524585852354560",
+              "managerName": "ryebread00",
+              "pick": "Bijan Robinson 100+ rushing yards @ Indianapolis (Munich)",
+              "result": "loss"
             }
           ]
         }
