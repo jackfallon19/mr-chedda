@@ -4,7 +4,7 @@
       "year": "2025",
       "weeks": [
         {
-          "week": 1,
+          "week": 2,
           "seasonWeek": "Season 2025 Week 1",
           "date": "2025-09-02",
           "parlayResult": "loss",
@@ -26,26 +26,14 @@
           ]
         },
         {
-          "week": 2,
-          "seasonWeek": "Season 2025 Week 2",
-          "date": "2025-09-09",
-          "parlayResult": "pending",
-          "payout": 0,
-          "thrownBy": {
-            "managerID": "992838327420121088",
-            "managerName": "jafallon"
-          },
-          "picks": []
-        },
-        {
           "week": 3,
           "seasonWeek": "Season 2025 Week 3",
           "date": "2025-09-16",
           "parlayResult": "loss",
           "payout": 0,
           "thrownBy": {
-            "managerID": "991503715234271232",
-            "managerName": "billm8"
+            "managerID": "990520804859232256",
+            "managerName": "tigbits711"
           },
           "picks": [
             { "managerID": "990522132113240064", "managerName": "ChuckLeady", "pick": "Vikings ML", "result": "win" },
@@ -63,8 +51,8 @@
           "parlayResult": "loss",
           "payout": 0,
           "thrownBy": {
-            "managerID": "992838327420121088",
-            "managerName": "jafallon"
+            "managerID": "991503715234271232",
+            "managerName": "billm8"
           },
           "picks": [
             { "managerID": "990520804859232256", "managerName": "tigbits711", "pick": "Patriots ML", "result": "win" },
@@ -85,8 +73,8 @@
           "parlayResult": "loss",
           "payout": 0,
           "thrownBy": {
-            "managerID": "991503715234271232",
-            "managerName": "billm8"
+            "managerID": "992838327420121088",
+            "managerName": "jafallon"
           },
           "picks": [
             { "managerID": "990520804859232256", "managerName": "tigbits711", "pick": "Saints ML", "result": "win" },
@@ -106,8 +94,8 @@
           "parlayResult": "loss",
           "payout": 0,
           "thrownBy": {
-            "managerID": "992186573034688512",
-            "managerName": "CamMacIntosh"
+            "managerID": "990520804859232256",
+            "managerName": "tigbits711"
           },
           "picks": [
             { "managerID": "990524585852354560", "managerName": "ryebread00", "pick": "Chiefs/Lions Over", "result": "loss" },
@@ -129,8 +117,8 @@
           "parlayResult": "loss",
           "payout": 0,
           "thrownBy": {
-            "managerID": "992838327420121088",
-            "managerName": "jafallon"
+            "managerID": "990524585852354560",
+            "managerName": "ryebread00"
           },
           "picks": [
             { "managerID": "991882566162558976", "managerName": "jwhill", "pick": "Luther Burden Anytime TD", "result": "loss" },
