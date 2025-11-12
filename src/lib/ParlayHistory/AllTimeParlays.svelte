@@ -66,8 +66,13 @@
             stat.winPercentage = totalPicks > 0 ? Math.round((stat.wins / totalPicks) * 100) : 0;
         });
 
-        // Sort by total spent (descending)
-        return Object.values(stats).sort((a, b) => b.totalSpent - a.totalSpent);
+        // Sort by win percentage (descending), then by total spent as tiebreaker
+        return Object.values(stats).sort((a, b) => {
+            if (b.winPercentage !== a.winPercentage) {
+                return b.winPercentage - a.winPercentage;
+            }
+            return b.totalSpent - a.totalSpent;
+        });
     };
 
     // Calculate season summaries
