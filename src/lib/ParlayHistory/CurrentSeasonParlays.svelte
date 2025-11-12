@@ -1,8 +1,20 @@
 <script>
     import DataTable, { Head, Body, Row, Cell } from '@smui/data-table';
+    import Select, { Option } from '@smui/select';
     import { gotoManager } from '$lib/utils/helper';
 
     let { season, leagueTeamManagers } = $props();
+
+    // Filter out weeks with no picks (pending weeks)
+    const weeksWithPicks = season.weeks.filter(week => week.picks && week.picks.length > 0);
+
+    // State for selected week (default to most recent week with picks)
+    let selectedWeek = $state(weeksWithPicks.length > 0 ? weeksWithPicks[weeksWithPicks.length - 1].week : 1);
+
+    // Get the selected week object
+    const getSelectedWeekData = () => {
+        return weeksWithPicks.find(week => week.week === selectedWeek) || weeksWithPicks[0];
+    };
 
     // Calculate manager stats
     const calculateManagerStats = () => {
@@ -157,6 +169,30 @@
         font-style: italic;
     }
 
+    .selectorContainer {
+        display: flex;
+        gap: 1em;
+        justify-content: center;
+        align-items: center;
+        margin: 2em auto;
+        flex-wrap: wrap;
+    }
+
+    .selectorLabel {
+        font-weight: 500;
+        margin-right: 0.5em;
+    }
+
+    .selectorGroup {
+        display: flex;
+        align-items: center;
+        gap: 0.5em;
+    }
+
+    :global(.weekSelector) {
+        min-width: 200px;
+    }
+
     /* Responsive table styling */
     @media (max-width: 768px) {
         :global(.parlayTable th) {
@@ -166,6 +202,10 @@
         :global(.parlayTable td) {
             font-size: 0.8em;
             padding: 8px 4px;
+        }
+
+        .selectorContainer {
+            flex-direction: column;
         }
     }
 
@@ -217,7 +257,26 @@
 
 <h3>Weekly Breakdown</h3>
 
-{#each season.weeks as week}
+<div class="selectorContainer">
+    <div class="selectorGroup">
+        <span class="selectorLabel">Year:</span>
+        <Select variant="outlined" bind:value={season.year} disabled class="weekSelector">
+            <Option value={season.year}>{season.year}</Option>
+        </Select>
+    </div>
+
+    <div class="selectorGroup">
+        <span class="selectorLabel">Week:</span>
+        <Select variant="outlined" bind:value={selectedWeek} class="weekSelector">
+            {#each weeksWithPicks as week}
+                <Option value={week.week}>Week {week.week}</Option>
+            {/each}
+        </Select>
+    </div>
+</div>
+
+{#if getSelectedWeekData()}
+    {@const week = getSelectedWeekData()}
     <div class="weekHeader">
         <div class="weekTitle">
             {week.seasonWeek}
@@ -264,4 +323,4 @@
             {/each}
         </Body>
     </DataTable>
-{/each}
+{/if}
