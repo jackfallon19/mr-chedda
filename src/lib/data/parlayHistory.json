@@ -241,6 +241,61 @@
               "result": "loss"
             }
           ]
+        },
+        {
+          "week": 11,
+          "seasonWeek": "Season 2025 Week 11",
+          "date": "2025-11-17",
+          "parlayResult": "loss",
+          "payout": 0,
+          "thrownBy": {
+            "managerID": "990704123299336192",
+            "managerName": "jenright19"
+          },
+          "picks": [
+            {
+              "managerID": "991503715234271232",
+              "managerName": "billm8",
+              "pick": "Tez Johnson 40+ yards @ Buffalo",
+              "result": "loss"
+            },
+            {
+              "managerID": "990522132113240064",
+              "managerName": "ChuckLeady",
+              "pick": "Lions +2.5 @ Philadelphia",
+              "result": "loss"
+            },
+            {
+              "managerID": "990524585852354560",
+              "managerName": "ryebread00",
+              "pick": "Eagles ML vs Detroit",
+              "result": "win"
+            },
+            {
+              "managerID": "992838327420121088",
+              "managerName": "jafallon",
+              "pick": "Woody Marks ATTD @ Tennessee",
+              "result": "loss"
+            },
+            {
+              "managerID": "990520804859232256",
+              "managerName": "tigbits711",
+              "pick": "Titans +5.5 vs Houston",
+              "result": "win"
+            },
+            {
+              "managerID": "887911442844925952",
+              "managerName": "jfaoro",
+              "pick": "Travis Kelce 5+ receptions @ Denver",
+              "result": "win"
+            },
+            {
+              "managerID": "990753572016943104",
+              "managerName": "Nolanwest",
+              "pick": "Romeo Doubs 50+ @ New York Giants",
+              "result": "win"
+            }
+          ]
         }
       ]
     },
