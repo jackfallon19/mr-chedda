@@ -147,6 +147,10 @@ export const getHeadToHeadMatrix = async (refresh = false) => {
 				const managerA = rosterManager[sideA.roster_id];
 				const managerB = rosterManager[sideB.roster_id];
 				if (!managerA || !managerB || managerA === managerB) continue;
+				// Sleeper returns points: 0 for both sides on weeks that haven't been played yet
+				// (e.g. the remainder of the current season) - skip those so they don't get
+				// recorded as 0-0 ties.
+				if (!sideA.points && !sideB.points) continue;
 				recordResult(managerA, managerB, week, year, sideA.points ?? 0, sideB.points ?? 0);
 			}
 		}

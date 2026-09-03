@@ -2,13 +2,14 @@
 	import Matchup from "$lib/Matchups/Matchup.svelte";
 	import TradeTransaction from "$lib/Transactions/TradeTransaction.svelte";
 	import { getLeagueRecords, getLeagueTransactions, getRivalryMatchups, loadPlayers, round } from "$lib/utils/helper";
+	import { getHeadToHeadMatrix } from "$lib/utils/helperFunctions/headToHead";
 	import { getRosterIDFromManagerIDAndYear } from "$lib/utils/helperFunctions/universalFunctions";
 	import { onMount } from "svelte";
 	import ComparissonBar from "./ComparissonBar.svelte";
 	import RivalryControls from "./RivalryControls.svelte";
 	import HeatMap from "./HeatMap.svelte";
 
-	let { leagueTeamManagers, playersInfo = $bindable(), transactionsInfo = $bindable(), recordsInfo = $bindable(), headToHead } = $props();
+	let { leagueTeamManagers, playersInfo = $bindable(), transactionsInfo = $bindable(), recordsInfo = $bindable(), headToHead = $bindable() } = $props();
 
 	// refresh stale data
 	onMount(async () => {
@@ -20,6 +21,9 @@
 		}
 		if(recordsInfo.stale) {
 			recordsInfo = await getLeagueRecords(true);
+		}
+		if(headToHead.stale) {
+			headToHead = await getHeadToHeadMatrix(true);
 		}
 	})
 
