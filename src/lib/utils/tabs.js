@@ -14,16 +14,16 @@ export const tabs = [
         key: 'matchups',
     },
     {
-        icon: 'swap_horiz',
-        label: 'Trades & Waivers',
-        dest: '/transactions',
-        key: 'transactions',
+        icon: 'local_fire_department',
+        label: 'Head to Head',
+        dest: '/rivalry',
+        key: 'rivalry',
     },
     {
-        icon: 'article',
-        label: 'Blog',
-        dest: '/blog',
-        key: 'blog',
+        icon: 'leaderboard',
+        label: 'Standings',
+        dest: '/standings',
+        key: 'standings',
     },
     {
         icon: 'view_comfy',
@@ -31,6 +31,16 @@ export const tabs = [
         nest: true,
         key: 'league_info',
         children: [
+            {
+                icon: 'swap_horiz',
+                label: 'Trades & Waivers',
+                dest: '/transactions',
+            },
+            {
+                icon: 'article',
+                label: 'Blog',
+                dest: '/blog',
+            },
             {
                 icon: 'casino',
                 label: 'Weekly Parlay History',
@@ -45,16 +55,6 @@ export const tabs = [
                 icon: 'groups',
                 label: 'Managers',
                 dest: '/managers',
-            },
-            {
-                icon: 'local_fire_department',
-                label: 'Rivalry',
-                dest: '/rivalry',
-            },
-            {
-                icon: 'leaderboard',
-                label: 'Standings',
-                dest: '/standings',
             },
             {
                 icon: 'view_comfy',
@@ -82,11 +82,5 @@ export const tabs = [
                 dest: `https://sleeper.app/leagues/${leagueID}`,
             },
         ]
-    },
-    {
-        icon: 'lightbulb',
-        label: 'Resources',
-        dest: '/resources',
-        key: 'resources',
     },
 ];

@@ -1,106 +1,82 @@
 <script>
 	import { tabs } from '$lib/utils/tabs';
-	import Drawer, {
-	  Content,
-	  Header,
-	  Title,
-	} from '@smui/drawer';
-	import { Icon } from '@smui/tab';
-  	import List, { Item, Text, Graphic, Separator, Subheader } from '@smui/list';
 	import { goto, preloadData } from '$app/navigation';
-    import { page } from '$app/state';
+	import { page } from '$app/state';
 	import { leagueName } from '$lib/utils/helper';
 	import { enableBlog, managers } from '$lib/utils/leagueInfo';
 
 	let active = $state(page.url.pathname);
-
 	let open = $state(false);
 
 	const selectTab = (tab) => {
 		open = false;
 		goto(tab.dest);
-	}
+	};
 </script>
 
-<style>
-	:global(.menuIcon) {
-		position: absolute;
-		top: 15px;
-		left: 15px;
-		font-size: 2em;
-		color: #888;
-		padding: 6px;
-		cursor: pointer;
-	}
+<button
+	class="p-2 rounded-full text-text-muted hover:text-text hover:bg-surface-2 transition-colors"
+	aria-label="Open menu"
+	onclick={() => (open = true)}
+>
+	<span class="material-icons text-2xl">menu</span>
+</button>
 
-	:global(.menuIcon:hover) {
-		color: #00316b;
-	}
+<div
+	class="fixed inset-0 z-40 bg-black/50 transition-opacity duration-300 {open ? 'opacity-100' : 'opacity-0 pointer-events-none'}"
+	onclick={() => (open = false)}
+></div>
 
-	:global(.nav-drawer) {
-		z-index: 9;
-		top: 0;
-		left: 0;
-	}
+<aside
+	class="fixed left-0 top-0 z-50 h-full w-[280px] max-w-[80vw] overflow-y-auto bg-surface border-r border-border shadow-2xl
+		transition-transform duration-300 {open ? 'translate-x-0' : '-translate-x-full'}"
+>
+	<div class="px-5 py-4 border-b border-border">
+		<span class="text-lg font-bold">{leagueName}</span>
+	</div>
 
-	:global(.nav-item) {
-		color: #858585 !important;
-	}
+	<nav class="py-2">
+		{#each tabs as tab}
+			{#if !tab.nest && (tab.label !== 'Blog' || enableBlog)}
+				<a
+					href="javascript:void(0)"
+					onclick={() => selectTab(tab)}
+					onmouseover={() => preloadData(tab.dest)}
+					ontouchstart={() => preloadData(tab.dest)}
+					class="flex items-center gap-3 px-5 py-3 text-sm transition-colors
+						{active === tab.dest ? 'text-primary bg-surface-2' : 'text-text-muted hover:text-text'}"
+				>
+					<span class="material-icons text-[1.2em]">{tab.icon}</span>
+					{tab.label}
+				</a>
+			{/if}
+		{/each}
 
-	.nav-back {
-		position: fixed;
-		z-index: 8;
-		width: 100%;
-		width: 100vw;
-		height: 100%;
-		height: 100vh;
-		top: 0;
-		left: 0;
-		background-color: rgba(0, 0, 0, 0.32);
-		transition: all 0.7s;
-	}
-</style>
-
-<Icon class="material-icons menuIcon" onclick={() => open = true} ripple={false} touch={true}>menu</Icon>
-
-<div class="nav-back" style="pointer-events: {open ? "visible" : "none"}; opacity: {open ? 1 : 0};" onclick={() => open = false}></div>
-
-<Drawer variant="modal" class="nav-drawer" fixed={true} bind:open>
-	<Header>
-		<Title>{leagueName}</Title>
-	</Header>
-	<Content>
-		<List>
-			{#each tabs as tab}
-				{#if !tab.nest && (tab.label != 'Blog' || (tab.label == 'Blog' && enableBlog))}
-					<Item href="javascript:void(0)" onSMUIAction={() => selectTab(tab)} ontouchstart={() => preloadData(tab.dest)} onmouseover={() => preloadData(tab.dest)} activated={active == tab.dest} >
-						<Graphic class="material-icons{active == tab.dest ? "" : " nav-item"}" aria-hidden="true">{tab.icon}</Graphic>
-						<Text class="{active == tab.dest ? "" : "nav-item"}">{tab.label}</Text>
-					</Item>
-				{/if}
-			{/each}
-			{#each tabs as tab}
-				{#if tab.nest}
-					<Separator />
-					<Subheader>{tab.label}</Subheader>
-					{#each tab.children as subTab}
-						{#if subTab.label == 'Managers'}
-							{#if managers.length}
-								<Item href="javascript:void(0)" onSMUIAction={() => selectTab(subTab)} activated={active == subTab.dest}  ontouchstart={() => preloadData(subTab.dest)} onmouseover={() => preloadData(subTab.dest)}>
-									<Graphic class="material-icons{active == subTab.dest ? "" : " nav-item"}" aria-hidden="true">{subTab.icon}</Graphic>
-									<Text class="{active == subTab.dest ? "" : "nav-item"}">{subTab.label}</Text>
-								</Item>
-							{/if}
-						{:else}
-							<Item href="javascript:void(0)" onSMUIAction={() => selectTab(subTab)} activated={active == subTab.dest}  ontouchstart={() => {if(subTab.label != 'Go to Sleeper') preloadData(subTab.dest)}} onmouseover={() => {if(subTab.label != 'Go to Sleeper') preloadData(subTab.dest)}}>
-								<Graphic class="material-icons{active == subTab.dest ? "" : " nav-item"}" aria-hidden="true">{subTab.icon}</Graphic>
-								<Text class="{active == subTab.dest ? "" : "nav-item"}">{subTab.label}</Text>
-							</Item>
-						{/if}
-					{/each}
-				{/if}
-			{/each}
-		</List>
-	</Content>
-  </Drawer>
-	
+		{#each tabs as tab}
+			{#if tab.nest}
+				<div class="mt-3 mb-1 px-5 text-xs font-semibold uppercase tracking-wide text-text-faint">
+					{tab.label}
+				</div>
+				{#each tab.children as subTab}
+					{#if (subTab.label !== 'Managers' || managers.length) && (subTab.label !== 'Blog' || enableBlog)}
+						<a
+							href="javascript:void(0)"
+							onclick={() => selectTab(subTab)}
+							onmouseover={() => {
+								if (subTab.label !== 'Go to Sleeper') preloadData(subTab.dest);
+							}}
+							ontouchstart={() => {
+								if (subTab.label !== 'Go to Sleeper') preloadData(subTab.dest);
+							}}
+							class="flex items-center gap-3 px-5 py-2.5 text-sm transition-colors
+								{active === subTab.dest ? 'text-primary bg-surface-2' : 'text-text-muted hover:text-text'}"
+						>
+							<span class="material-icons text-[1.1em]">{subTab.icon}</span>
+							{subTab.label}
+						</a>
+					{/if}
+				{/each}
+			{/if}
+		{/each}
+	</nav>
+</aside>

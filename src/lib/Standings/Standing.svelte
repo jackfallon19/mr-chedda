@@ -1,42 +1,20 @@
 <script>
     import { gotoManager } from '$lib/utils/helper';
-  	import { Row, Cell } from '@smui/data-table';
 
-    export let columnOrder, team, standing, leagueTeamManagers;
+    let { columnOrder, team, standing, leagueTeamManagers } = $props();
 </script>
 
-<style>
-    .clickable {
-        cursor: pointer;
-    }
-	
-	.teamAvatar {
-		vertical-align: middle;
-		border-radius: 50%;
-		height: 40px;
-		margin-right: 15px;
-		border: 0.25px solid #777;
-	}
-
-    :global(.contrastRow) {
-        background-color: var(--f8f8f8);
-    }
-
-    .team {
-        text-align: center;
-    }
-</style>
-
-<Row class="contrastRow">
-    <Cell class="">
-        <div class="clickable team" onclick={() => gotoManager({leagueTeamManagers, rosterID: standing.rosterID})}>
-            <img alt="team avatar" class="teamAvatar clickable" src="{team.avatar}" />
-            <div>
-                {team.name}
-            </div>
-        </div>
-    </Cell>
+<tr class="border-b border-border last:border-0 hover:bg-surface-2/60 transition-colors">
+    <td class="py-2.5 pl-4 pr-2">
+        <button
+            class="flex items-center gap-3 text-left group"
+            onclick={() => gotoManager({leagueTeamManagers, rosterID: standing.rosterID})}
+        >
+            <img alt="team avatar" class="w-9 h-9 rounded-full border border-border object-cover" src="{team.avatar}" />
+            <span class="font-medium group-hover:text-primary transition-colors">{team.name}</span>
+        </button>
+    </td>
     {#each columnOrder as column}
-        <Cell class="center">{standing[column.field]}</Cell>
+        <td class="text-center py-2.5 px-3 tabular-nums text-text-muted">{standing[column.field]}</td>
     {/each}
-</Row>
+</tr>

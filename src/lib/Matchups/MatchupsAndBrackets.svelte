@@ -3,7 +3,6 @@
 	import LinearProgress from '@smui/linear-progress';
 	import MatchupWeeks from './MatchupWeeks.svelte';
 	import Brackets from './Brackets.svelte';
-    import Button, { Group, Label } from '@smui/button';
     import { goto } from '$app/navigation';
     import { onMount } from 'svelte';
     import { loadPlayers } from '$lib/utils/helper';
@@ -53,13 +52,6 @@
         max-width: 500px;
         margin: 80px auto;
     }
-
-    .buttonHolder {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin: 3em 0;
-    }
 </style>
 
 
@@ -72,28 +64,36 @@
     </div>
 {:else}
     {#if matchupWeeks.length}
-        <div class="buttonHolder">
-            <Group variant="outlined">
-                <!-- Regular Season -->
-                <Button class="selectionButtons" onclick={() => changeSelection('regular')} variant="{selection == 'regular' ? "raised" : "outlined"}">
-                    <Label>Regular Season</Label>
-                </Button>
-                <!-- Championship Bracket -->
-                <Button class="selectionButtons" onclick={() => changeSelection('champions')} variant="{selection == 'champions' || selection == 'losers' ? "raised" : "outlined"}">
-                    <Label>Playoffs</Label>
-                </Button>
-            </Group>
+        <div class="flex flex-col items-center gap-3 my-8">
+            <div class="inline-flex rounded-full border border-border bg-surface p-1 shadow-sm">
+                <button
+                    class="px-6 py-2.5 rounded-full font-display text-sm font-extrabold uppercase tracking-wide transition-colors {selection == 'regular' ? 'bg-primary text-on-primary shadow' : 'text-text-muted hover:text-text'}"
+                    onclick={() => changeSelection('regular')}
+                >
+                    Regular Season
+                </button>
+                <button
+                    class="px-6 py-2.5 rounded-full font-display text-sm font-extrabold uppercase tracking-wide transition-colors {selection == 'champions' || selection == 'losers' ? 'bg-primary text-on-primary shadow' : 'text-text-muted hover:text-text'}"
+                    onclick={() => changeSelection('champions')}
+                >
+                    Playoffs
+                </button>
+            </div>
             {#if selection == 'champions' || selection == 'losers'}
-                <Group variant="outlined">
-                    <!-- Championship Bracket -->
-                    <Button class="selectionButtons" onclick={() => changeSelection('champions')} variant="{selection == 'champions' ? "raised" : "outlined"}">
-                        <Label>Champions' Bracket</Label>
-                    </Button>
-                    <!-- Losers Bracket -->
-                    <Button class="selectionButtons" onclick={() => changeSelection('losers')} variant="{selection == 'losers' ? "raised" : "outlined"}">
-                        <Label>Losers' Bracket</Label>
-                    </Button>
-                </Group>
+                <div class="inline-flex rounded-full border border-border bg-surface p-1 shadow-sm">
+                    <button
+                        class="px-6 py-2.5 rounded-full font-display text-sm font-extrabold uppercase tracking-wide transition-colors {selection == 'champions' ? 'bg-primary text-on-primary shadow' : 'text-text-muted hover:text-text'}"
+                        onclick={() => changeSelection('champions')}
+                    >
+                        Dinna Bracket
+                    </button>
+                    <button
+                        class="px-6 py-2.5 rounded-full font-display text-sm font-extrabold uppercase tracking-wide transition-colors {selection == 'losers' ? 'bg-primary text-on-primary shadow' : 'text-text-muted hover:text-text'}"
+                        onclick={() => changeSelection('losers')}
+                    >
+                        Dress Yoffs
+                    </button>
+                </div>
             {/if}
         </div>
         {#if selection == 'regular'}

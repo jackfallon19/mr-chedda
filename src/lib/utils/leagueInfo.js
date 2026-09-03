@@ -1,5 +1,5 @@
 /*   STEP 1   */
-export const leagueID = "1250549223967948800"; // your league ID
+export const leagueID = "1374463529486127104"; // your league ID (2026 season)
 export const leagueName = "Chedda Cheese"; // your league name
 export const dues = 100; // (optional) used in template constitution page
 export const dynasty = false; // true for dynasty leagues, false for redraft and keeper
@@ -7,14 +7,10 @@ export const enableBlog = true; // requires VITE_CONTENTFUL_ACCESS_TOKEN and VIT
 
 /*   STEP 2   */
 export const homepageText = `
-  <p>Gentlemen,</p>
-  <p>Welcome to the offical Chedda Cheese website. This is where we crawl out of Sleeper’s bland-ass reports and serve up something meater than the steak I hope eat with Mr. Chedda at dinna one day.<p>
-  <p>Here you’ll get:<p>
-  <p>Game insights (a.k.a. why your team is going to win - reverse jinx will live here as well)<p>
-    <p>Injury reports (My name WILL pop up more than the photo of Faoro grabbing a handful of muff)
-    <p>The Weekly Parlay (guaranteed to hit right once we stop bettting on Boos' players)<p>
-    <p>Trade updates (watch your dumb ass get fleeced and then still defend the move like you’re a genius - shoutout Enright I cannot wait to have Rome for a decade)<p>
-<p>This isn’t just fantasy football. This is the place where egos die, trash talk thrives, and one of you clowns wears a dress at Wrigley on a beuatiful day in June.</p>
+  <p>Congrats to the 2025 Winner of Dinna with Chedda ALPHA for winning his second dinner in two years, the first was micky mouse. So congrats on your first.</p>
+  <p>Fallon wore the dress as a courtesy for the rest of the league, no doubt he will be never be that drunk and shameful in Wrigley again. If we are looking at his 2026 draft, there is no doubt he will be back where he belongs, the yoffs.</p>
+  <p>There was a lot of ~interesting~ picks to start the season off. Boos took London at 4 and Lead is loaded with Lions, nothing shocking there. Bill is basically putting his team in Puka's hands, hopefully he only bites his mouthguard to start the season. Nolan has Pitts - he will play out of his mind in the dress yoffs. This is a historical fact. Faoro thinks he outsmarted everyone which means he really just reached on every pick, bold strategy cotton we will see how it pays off for him. Johnny put his fiath in Josh Allen, hopefully Hailee Steinfield can bring in another MVP season. Cam has Trey McBride, thats the highlight of the squad. Riley has 4 wheelchairs on his roster. Enright took Jacobs 3rd round and bought a Harley - checks out if you ask me.</p>
+  <p>The season is officially underway and the race to not wear the dress is upon us.</p>
 `;
 
 /*   STEP 3   */

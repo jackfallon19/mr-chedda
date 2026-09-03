@@ -56,50 +56,61 @@
 <style>
     .matchups {
         margin: 2em 0 6em;
+        max-width: 960px;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 0 1rem;
     }
     .weekContainer {
         display: flex;
-        width: 95%;
-        max-width: 600px;
-        margin: 0 auto;
         align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        margin-bottom: 2rem;
     }
 
     :global(.changeWeek) {
-        font-size: 3em;
+        font-size: 2em;
         cursor: pointer;
-        color: #888;
+        color: var(--text-faint);
+        transition: color 0.15s;
+        border-radius: 999px;
     }
 
     :global(.changeWeek:hover) {
-        color: #00316b;
+        color: var(--primary);
     }
 
     .spacer {
-        width: 48px;
+        width: 40px;
     }
 
     .weekText {
-        flex-grow: 1;
+        flex-grow: 0;
         text-align: center;
-        font-size: 2em;
+        font-size: 1.75em;
+        font-family: var(--font-display);
+        font-weight: 900;
+        text-transform: uppercase;
+        letter-spacing: -0.01em;
+        color: var(--text);
     }
 
     @media (max-width: 800px) {
         .weekText {
-            font-size: 1.6em;
+            font-size: 1.4em;
         }
     }
 
     @media (max-width: 400px) {
         .weekText {
-            font-size: 1.3em;
+            font-size: 1.15em;
         }
     }
 
     @media (max-width: 350px) {
         .weekText {
-            font-size: 1.2em;
+            font-size: 1.05em;
         }
     }
 </style>
@@ -118,7 +129,9 @@
             <span class="spacer" />
         {/if}
     </div>
-    {#each matchupArray as matchup, ix (rand * (ix + 1))}
-        <Matchup {ix} {matchup} {players} {displayWeek} bind:active={active} {leagueTeamManagers} />
-    {/each}
+    <div class="flex flex-col gap-4">
+        {#each matchupArray as matchup, ix (rand * (ix + 1))}
+            <Matchup {ix} {matchup} {players} {displayWeek} bind:active={active} {leagueTeamManagers} />
+        {/each}
+    </div>
 </div>

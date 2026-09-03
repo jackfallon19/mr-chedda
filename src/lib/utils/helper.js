@@ -6,6 +6,7 @@ import {getLeagueRosters} from './helperFunctions/leagueRosters';
 import {getLeagueTeamManagers} from './helperFunctions/leagueTeamManagers';
 import {getLeagueMatchups} from './helperFunctions/leagueMatchups'
 import {getRivalryMatchups} from './helperFunctions/rivalryMatchups'
+import {getHeadToHeadMatrix, getWinPct, getAvgPointDiff} from './helperFunctions/headToHead'
 import {getNews, stringDate} from './helperFunctions/news';
 import {loadPlayers} from './helperFunctions/players';
 import { waitForAll } from './helperFunctions/multiPromise';
@@ -30,6 +31,9 @@ export {
     getLeagueTeamManagers,
     getLeagueMatchups,
     getRivalryMatchups,
+    getHeadToHeadMatrix,
+    getWinPct,
+    getAvgPointDiff,
     getNews,
     loadPlayers,
     waitForAll,

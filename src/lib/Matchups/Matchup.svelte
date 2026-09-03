@@ -11,8 +11,25 @@
     let homeProjectionTotal = 0;
     let awayPointsTotal = 0;
     let awayProjectionTotal = 0;
+    let homeWinPct = 50;
 
     let winning = "home";
+
+    // Sleeper's public API doesn't expose a win-probability figure, so this is
+    // estimated: for players who haven't scored yet we use their weekly
+    // projection, for players who have we use their actual points, then run
+    // the projected final differential through a logistic curve.
+    const estimateWinPct = (localStarters) => {
+        let homeLive = 0;
+        let awayLive = 0;
+        for (const { home: h, away: a } of localStarters) {
+            homeLive += h.points > 0 ? h.points : h.projection;
+            awayLive += a && a.points > 0 ? a.points : (a ? a.projection : 0);
+        }
+        const diff = homeLive - awayLive;
+        const pct = 1 / (1 + Math.pow(10, -diff / 16));
+        return Math.min(99, Math.max(1, Math.round(pct * 100)));
+    }
 
     const digestStarters = (x, p) => {
         home = matchup[0];
@@ -45,6 +62,7 @@
         if(awayPointsTotal > homePointsTotal) winning = "away";
         if(awayPointsTotal == homePointsTotal) winning = "tied";
         starters = localStarters;
+        homeWinPct = estimateWinPct(localStarters);
     }
 
     const digestStarter = (starter, points) => {
@@ -113,44 +131,58 @@
 
 <style>
     .matchup {
-        width: 95%;
-        max-width: 600px;
-        margin: 10px auto;
+        width: 100%;
+        max-width: 960px;
+        margin: 0 auto;
     }
 
     .header {
         display: flex;
         justify-content: space-between;
         position: relative;
-        border: 1px solid #bbb;
-        border-radius: 10px;
-        opacity: 0.8;
+        border-radius: 999px;
         cursor: pointer;
-		transition: opacity 0.5s;
+        transition: transform 0.15s, box-shadow 0.15s;
         overflow: hidden;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.08);
     }
 
     .header:hover {
-        opacity: 1;
+        transform: translateY(-1px);
+        box-shadow: 0 6px 18px rgba(0,0,0,0.14);
     }
 
     .opponent {
         display: flex;
         align-items: center;
         width: 46%;
-        padding: 5px 2%;
+        padding: 10px 3%;
         top: 0;
         z-index: 2;
     }
 
-    .divider {
+    .winPctBadge {
         position: absolute;
-        z-index: 3;
-        transform: translateX(-50%);
-        top: 0;
+        z-index: 4;
+        top: 50%;
         left: 50%;
-        height: 100%;
-        width: 15px;
+        transform: translate(-50%, -50%);
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        background-color: var(--surface);
+        color: var(--text);
+        border-radius: 999px;
+        padding: 4px 10px;
+        font-size: 0.7em;
+        font-weight: 800;
+        white-space: nowrap;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+    }
+
+    .winPctSplit {
+        color: var(--text-faint);
+        font-weight: 400;
     }
 
     .home {
@@ -190,11 +222,12 @@
 	.avatar {
 		vertical-align: middle;
 		border-radius: 50%;
-		height: 35px;
-		width: 35px;
+		height: 42px;
+		width: 42px;
 		margin: 0;
-		border: 0.25px solid #777;
+		border: 2px solid rgba(255,255,255,0.5);
         background-color: #eee;
+        flex-shrink: 0;
 	}
 
 	.playerAvatar {
@@ -266,12 +299,13 @@
 
     .rosters {
         position: relative;
-        background-color: var(--fff);
-        border-radius: 8px;
+        background-color: var(--surface);
+        border-radius: 16px;
         overflow: hidden;
-        border-left: 1px solid #bbb;
-        border-right: 1px solid #bbb;
-        border-bottom: 1px solid #bbb;
+        border-left: 1px solid var(--border-c);
+        border-right: 1px solid var(--border-c);
+        border-bottom: 1px solid var(--border-c);
+        margin-top: -2px;
 		transition: max-height 0.4s;
     }
 
@@ -279,7 +313,7 @@
         position: relative;
         display: flex;
         justify-content: space-between;
-        border-top: 1px solid #bbb;
+        border-top: 1px solid var(--border-c);
     }
 
     .player {
@@ -388,16 +422,17 @@
     .close {
         display: block;
         width: 100%;
-        background-color: var(--eee);
+        background-color: var(--surface-2);
+        color: var(--text-muted);
         text-align: center;
         cursor: pointer;
         z-index: 2;
         font-size: 1.1em;
-        padding: 6px 0;
+        padding: 8px 0;
     }
 
     .close:hover {
-        background-color: var(--ddd);
+        background-color: var(--surface-3);
     }
 
     .nameHolder {
@@ -487,7 +522,11 @@
             <div class="name">{home.manager.name}</div>
             <div class="totalPoints totalPointsR">{round(homePointsTotal)}<div class="totalProjection">{round(homeProjectionTotal)}</div></div>
         </div>
-        <img class="divider" src="/{winning}Divider.jpg" alt="divider" />
+        <div class="winPctBadge">
+            <span class="winPctHome">{homeWinPct}%</span>
+            <span class="winPctSplit">&middot;</span>
+            <span class="winPctAway">{100 - homeWinPct}%</span>
+        </div>
         <div class="opponent away{winning == "away" ? " awayGlow" : ""}">
             <div class="totalPoints totalPointsL">{round(awayPointsTotal)}<div class="totalProjection">{round(awayProjectionTotal)}</div></div>
             <div class="name" >{away.manager.name}</div>

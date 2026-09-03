@@ -11,9 +11,9 @@
             switch (playoffLength - ix) {
                 case 1:
                     if(losers) {
-                        label = 'Toilet Bowl'
+                        label = 'Dress Yoffs Final'
                     } else {
-                        label = 'Championship Match'
+                        label = 'Dinna Bracket Final'
                     }
                     break;
                 case 2:
@@ -33,9 +33,9 @@
             // If it's not a consolation match the only single matchup is the final
             if(!consolation) {
                 if(losers) {
-                    label = 'Toilet Bowl'
+                    label = 'Dress Yoffs Final'
                 } else {
-                    label = 'Championship Match'
+                    label = 'Dinna Bracket Final'
                 }
                 return;
             }
@@ -189,20 +189,27 @@
         position: absolute;
         text-align: center;
         margin: 0;
+        font-family: var(--font-display);
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: 0.02em;
+        font-size: 0.9em;
+        color: var(--text-muted);
     }
 
     .match {
-        width: 280px;
-        border: 1px solid var(--ccc);
-        background-color: var(--bracketMatch);
-        border-radius: 10px;
-        margin: 2em 1em;
+        width: 220px;
+        border: 1px solid var(--border-c);
+        background-color: var(--surface);
+        border-radius: 14px;
+        margin: 1em 0.6em;
         z-index: 2;
+        box-shadow: 0 1px 4px rgba(0,0,0,0.05);
     }
 
     .selected {
-        background-color: var(--matchupSelected);
-        box-shadow: 0 0 8px 6px var(--matchupSelected);
+        border-color: var(--primary);
+        box-shadow: 0 0 0 2px var(--primary-dim);
     }
 
     .clickable {
@@ -211,7 +218,7 @@
 
     .manager {
         flex-direction: column;
-        margin: 1em 0.5em;
+        margin: 0.65em 0.5em;
         display: flex;
         justify-content: flex-start;
         align-items: center;
@@ -226,16 +233,17 @@
 
     .name {
         margin-top: 0.3em;
-        font-size: 1em;
+        font-size: 0.95em;
+        font-weight: 600;
         line-height: 1.1em;
         flex-grow: 1;
         word-break: break-word;
-        color: var(--g444);
+        color: var(--text);
         width: 100%;
     }
 
     .bye {
-        color: #999;
+        color: var(--text-faint);
         font-style: italic;
     }
 
@@ -245,21 +253,21 @@
         height: 25px;
         width: 25px;
         margin: 0;
-        border: 0.25px solid #777;
-        background-color: #eee;
+        border: 0.25px solid var(--border-c);
+        background-color: var(--surface-2);
     }
 
     .points {
         line-height: 1.1em;
         font-size: 0.85em;
         padding-left: 1em;
-        color: var(--g333);
+        color: var(--text);
         text-align: right;
     }
 
     .projectedPoints {
         font-size: 0.8em;
-        color: var(--g999);
+        color: var(--text-faint);
     }
 
     /* SVG styling */
@@ -284,19 +292,19 @@
     /* media queries */
 	@media (max-width: 1000px) {
         .match {
-            width: 220px;
+            width: 180px;
         }
 	}
 
 	@media (max-width: 800px) {
         .match {
-            width: 180px;
+            width: 150px;
         }
 	}
 
     @media (max-width: 610px) {
         .match {
-            width: 130px;
+            width: 120px;
             font-size: 0.9em;
         }
 
@@ -308,14 +316,14 @@
 
     @media (max-width: 500px) {
         .match {
-            width: 110px;
+            width: 100px;
             font-size: 0.8em;
         }
     }
 
     @media (max-width: 410px) {
         .match {
-            width: 80px;
+            width: 78px;
             font-size: 0.6em;
         }
     }
@@ -364,13 +372,13 @@
             <!-- Only draw the bracket once for each pair -->
             <svg class="lineParent">
                 <!-- top line of bracket -->
-                <line stroke-width="2px" stroke="#ccc"  x1="{anchors[Math.floor(inx / 2)].xLeft}" y1="{anchors[Math.floor(inx / 2)].yTop}" x2="{anchors[Math.floor(inx / 2)].xMiddle}" y2="{anchors[Math.floor(inx / 2)].yTop}" class="line"/>
+                <line stroke-width="2px" stroke="var(--border-c)"  x1="{anchors[Math.floor(inx / 2)].xLeft}" y1="{anchors[Math.floor(inx / 2)].yTop}" x2="{anchors[Math.floor(inx / 2)].xMiddle}" y2="{anchors[Math.floor(inx / 2)].yTop}" class="line"/>
                 <!-- vertical line of bracket -->
-                <line stroke-width="2px" stroke="#ccc"  x1="{anchors[Math.floor(inx / 2)].xMiddle}" y1="{anchors[Math.floor(inx / 2)].yTop}" x2="{anchors[Math.floor(inx / 2)].xMiddle}" y2="{anchors[Math.floor(inx / 2)].yBottom}" class="line"/>
+                <line stroke-width="2px" stroke="var(--border-c)"  x1="{anchors[Math.floor(inx / 2)].xMiddle}" y1="{anchors[Math.floor(inx / 2)].yTop}" x2="{anchors[Math.floor(inx / 2)].xMiddle}" y2="{anchors[Math.floor(inx / 2)].yBottom}" class="line"/>
                 <!-- right line of bracket -->
-                <line stroke-width="2px" stroke="#ccc"  x1="{anchors[Math.floor(inx / 2)].xMiddle}" y1="{anchors[Math.floor(inx / 2)].yMiddle}" x2="{anchors[Math.floor(inx / 2)].xRight}" y2="{anchors[Math.floor(inx / 2)].yMiddle}" class="line"/>
+                <line stroke-width="2px" stroke="var(--border-c)"  x1="{anchors[Math.floor(inx / 2)].xMiddle}" y1="{anchors[Math.floor(inx / 2)].yMiddle}" x2="{anchors[Math.floor(inx / 2)].xRight}" y2="{anchors[Math.floor(inx / 2)].yMiddle}" class="line"/>
                 <!-- bottom line of bracket -->
-                <line stroke-width="2px" stroke="#ccc"  x1="{anchors[Math.floor(inx / 2)].xLeft}" y1="{anchors[Math.floor(inx / 2)].yBottom}" x2="{anchors[Math.floor(inx / 2)].xMiddle}" y2="{anchors[Math.floor(inx / 2)].yBottom}" class="line"/>
+                <line stroke-width="2px" stroke="var(--border-c)"  x1="{anchors[Math.floor(inx / 2)].xLeft}" y1="{anchors[Math.floor(inx / 2)].yBottom}" x2="{anchors[Math.floor(inx / 2)].xMiddle}" y2="{anchors[Math.floor(inx / 2)].yBottom}" class="line"/>
             </svg>
         {/if}
     {:else}

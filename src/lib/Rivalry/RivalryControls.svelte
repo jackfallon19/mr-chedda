@@ -1,6 +1,4 @@
 <script>
-	import IconButton from '@smui/icon-button';
-
     export let year, displayWeek, selected, length;
 
     const nav = (dir) => {
@@ -20,26 +18,24 @@
     }
 </script>
 
-<style>
-    .container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    h4 {
-        display: inline-block;
-        text-align: center;
-        font-size: 1.6em;
-        margin: 10px 20px;
-    }
-</style>
-
-<div class="container">
+<div class="flex items-center justify-center gap-2 mb-2">
     {#if length > 0}
-        <IconButton class="material-icons" onclick={() => nav("left")}>chevron_left</IconButton>
+        <button
+            class="p-2 rounded-full text-text-muted hover:text-text hover:bg-surface-2 transition-colors"
+            onclick={() => nav("left")}
+            aria-label="Previous matchup"
+        >
+            <span class="material-icons">chevron_left</span>
+        </button>
     {/if}
-    <h4>{year} Week {displayWeek}</h4>
+    <h4 class="text-lg font-bold min-w-[140px] text-center">{year} Week {displayWeek}</h4>
     {#if length > 0}
-        <IconButton class="material-icons" onclick={() => nav("right")}>chevron_right</IconButton>
+        <button
+            class="p-2 rounded-full text-text-muted hover:text-text hover:bg-surface-2 transition-colors"
+            onclick={() => nav("right")}
+            aria-label="Next matchup"
+        >
+            <span class="material-icons">chevron_right</span>
+        </button>
     {/if}
 </div>

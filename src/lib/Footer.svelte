@@ -6,27 +6,10 @@
 
 	let outOfDate = false;
 
-    let el, footerHeight;
-
-    let innerWidth;
-
-    const resize = (e, delay) => {
-        const bottom = el?.getBoundingClientRect().bottom;
-        const top = el?.getBoundingClientRect().top;
-        if(delay) {
-            setTimeout(() => {
-                resize(e, false);
-            }, 100)
-        } else {
-            footerHeight = bottom - top;
-        }
-    }
-
 	onMount(async () => {
 		const res = await fetch('/api/checkVersion', {compress: true})
 		const needUpdate = await res.json();
 		outOfDate = needUpdate;
-        resize(el?.getBoundingClientRect(), true);
 	})
 
     let managersOutOfDate = false;
@@ -34,105 +17,49 @@
         for(const manager of managers) {
             if(manager.roster && !manager.managerID) {
                 managersOutOfDate = true;
-                resize(el?.getBoundingClientRect(), true);
                 break;
             }
         }
     }
 
 	const year = new Date().getFullYear();
-
-    $: resize(el?.getBoundingClientRect(), false, innerWidth);
 </script>
 
-<svelte:window bind:innerWidth={innerWidth} />
+<footer class="border-t border-border bg-surface mt-16">
+	<div class="max-w-6xl mx-auto px-6 py-10 text-center">
+		{#if outOfDate}
+			<p class="text-sm italic text-warning mb-2">There is an update available for your League Page. <a class="underline hover:text-text" href="https://github.com/nmelhado/league-page/blob/master/TRAINING_WHEELS.md#iv-updates">Follow the Update Instructions</a> to get all of the newest features!</p>
+		{/if}
+		{#if managersOutOfDate}
+			<p class="text-sm italic text-warning mb-2">Your managers page needs an update, <a class="underline hover:text-text" href="https://github.com/nmelhado/league-page/blob/master/TRAINING_WHEELS.md#2-add-managers">please follow the instructions</a> to get the most up-to-date experience.</p>
+		{/if}
 
-<style>
-	footer {
-		background-color: var(--f8f8f8);
-		width: 100%;
-        display: block;
-        position: absolute;
-        bottom: 0;
-		z-index: 1;
-		border-top: 1px solid #920505;
-		padding: 30px 0 60px;
-		text-align: center;
-		color: #777;
-	}
-
-	#navigation {
-		margin: 0 0 2em;
-	}
-
-	#navigation ul {
-		margin: 0;
-		padding: 0;
-	}
-
-	#navigation ul li {
-		list-style-type: none;
-		display: inline;
-	}
-
-	#navigation li:not(:first-child):before {
-		content: " | ";
-	}
-
-	.navLink {
-		display: inline-block;
-		cursor: pointer;
-		padding: 6px 10px;
-	}
-
-	.navLink:hover {
-		color: #920505;
-	}
-
-	.updateNotice {
-		color: var(--g999);
-		font-style: italic;
-		font-size: 0.8em;
-		margin-top: 0;
-	}
-</style>
-
-<div class="footerSpacer" style="height: {footerHeight}px;" />
-
-<!-- footer with update notice -->
-<footer bind:this={el}>
-    {#if outOfDate}
-	    <p class="updateNotice">There is an update available for your League Page. <a href="https://github.com/nmelhado/league-page/blob/master/TRAINING_WHEELS.md#iv-updates">Follow the Update Instructions</a> to get all of the newest features!</p>
-    {/if}
-    {#if managersOutOfDate}
-	    <p class="updateNotice">Your managers page needs an update, <a href="https://github.com/nmelhado/league-page/blob/master/TRAINING_WHEELS.md#2-add-managers">please follow the instructions</a> to get the most up-to-date experience.</p>
-    {/if}
-	<div id="navigation">
-		<ul>
-			{#each tabs as tab}
+		<nav class="flex flex-wrap items-center justify-center gap-x-1 gap-y-2 mb-6 text-sm">
+			{#each tabs as tab, i}
 				{#if !tab.nest}
-					<li><div class="navLink" onclick={() => goto(tab.dest)}>{tab.label}</div></li>
+					<button class="px-3 py-1 rounded-full text-text-muted hover:text-text hover:bg-surface-2 transition-colors" onclick={() => goto(tab.dest)}>{tab.label}</button>
 				{:else}
 					{#each tab.children as child}
-                        <!-- Shouldn't show Managers tab unless managers has been populated -->
-				        {#if child.label != "Managers" || managers.length > 0}
+						{#if child.label != "Managers" || managers.length > 0}
 							{#if child.label == "Go to Sleeper"}
-								<li><div class="navLink" onclick={() => window.location = child.dest}>{child.label}</div></li>
+								<button class="px-3 py-1 rounded-full text-text-muted hover:text-text hover:bg-surface-2 transition-colors" onclick={() => window.location = child.dest}>{child.label}</button>
 							{:else}
-                            	<li><div class="navLink" onclick={() => goto(child.dest)}>{child.label}</div></li>
+								<button class="px-3 py-1 rounded-full text-text-muted hover:text-text hover:bg-surface-2 transition-colors" onclick={() => goto(child.dest)}>{child.label}</button>
 							{/if}
-                        {/if}
+						{/if}
 					{/each}
 				{/if}
 			{/each}
-		</ul>
+		</nav>
+
+		<p class="text-xs text-text-faint">
+			&copy; 2021 - {year} <a class="hover:text-text-muted underline" href="https://github.com/nmelhado/league-page">League Page</a>
+		</p>
+		<p class="text-xs text-text-faint mt-1">
+			Built by <a class="hover:text-text-muted underline" href="http://www.nmelhado.com/">Nicholas Melhado</a>
+		</p>
+		<p class="text-xs text-text-faint mt-1">
+			Love League Page? Please consider <a class="hover:text-text-muted underline" href="https://www.buymeacoffee.com/nmelhado">donating</a> to support enhancements or just to say thank you!
+		</p>
 	</div>
-	<!-- PLEASE DO NOT REMOVE THE COPYRIGHT -->
-	<span class="copyright">&copy; 2021 - {year} <a href="https://github.com/nmelhado/league-page">League Page</a></span>
-	<br />
-	<!-- PLEASE DO NOT REMOVE THE BUILT BY -->
-	<span class="creator">Built by <a href="http://www.nmelhado.com/">Nicholas Melhado</a><br /></span>
-	<!-- You can remove the donation link (although any donations to help
-	 maintain and enhance League Page would be greatly appreciated!) -->
-	Love League Page? Please consider <a href="https://www.buymeacoffee.com/nmelhado">donating</a> to support enhancements or just to say thank you!
 </footer>
