@@ -2,7 +2,148 @@
   "seasons": [
     {
       "year": "2026",
-      "weeks": []
+      "weeks": [
+        {
+          "week": 1,
+          "seasonWeek": "Season 2026 Week 1",
+          "date": "2026-09-11",
+          "parlayResult": "loss",
+          "payout": 0,
+          "thrownBy": {
+            "managerID": "990520804859232256",
+            "managerName": "tigbits711"
+          },
+          "picks": [
+            {
+              "managerID": "990524585852354560",
+              "managerName": "ryebread00",
+              "pick": "Bears ML vs Carolina",
+              "result": "win"
+            },
+            {
+              "managerID": "992186573034688512",
+              "managerName": "CamMacIntosh",
+              "pick": "Colston Loveland Anytime TD vs Carolina",
+              "result": "loss"
+            },
+            {
+              "managerID": "887911442844925952",
+              "managerName": "jfaoro",
+              "pick": "Bears Over 47.5 vs Carolina",
+              "result": "win"
+            },
+            {
+              "managerID": "992838327420121088",
+              "managerName": "jafallon",
+              "pick": "Steelers -6 over Atlanta",
+              "result": "win"
+            },
+            {
+              "managerID": "990520804859232256",
+              "managerName": "tigbits711",
+              "pick": "Raiders ML over Miami",
+              "result": "win"
+            },
+            {
+              "managerID": "990753572016943104",
+              "managerName": "Nolanwest",
+              "pick": "Jonathan Taylor Anytime TD vs Baltimore",
+              "result": "win"
+            },
+            {
+              "managerID": "990522132113240064",
+              "managerName": "ChuckLeady",
+              "pick": "Lions -6.5 over New Orleans",
+              "result": "win"
+            },
+            {
+              "managerID": "991882566162558976",
+              "managerName": "jwhill",
+              "pick": "Kraft 40+ Receiving Yards vs Minnesota",
+              "result": "win"
+            },
+            {
+              "managerID": "990704123299336192",
+              "managerName": "jenright19",
+              "pick": "Caleb Williams Over 230 Passing Yards vs Carolina",
+              "result": "win"
+            },
+            {
+              "managerID": "991503715234271232",
+              "managerName": "billm8",
+              "pick": "Eagles/Commanders Under 44.5",
+              "result": "loss"
+            }
+          ]
+        },
+        {
+          "week": 2,
+          "seasonWeek": "Season 2026 Week 2",
+          "date": "2026-09-20",
+          "parlayResult": "loss",
+          "payout": 0,
+          "thrownBy": {
+            "managerID": "990520804859232256",
+            "managerName": "tigbits711"
+          },
+          "picks": [
+            {
+              "managerID": "991882566162558976",
+              "managerName": "jwhill",
+              "pick": "Rome Odunze 3+ Receptions vs Minnesota",
+              "result": "win"
+            },
+            {
+              "managerID": "990753572016943104",
+              "managerName": "Nolanwest",
+              "pick": "Colston Loveland Over Catches vs Minnesota",
+              "result": "loss"
+            },
+            {
+              "managerID": "990524585852354560",
+              "managerName": "ryebread00",
+              "pick": "Titans/Eagles Over",
+              "result": "win"
+            },
+            {
+              "managerID": "990520804859232256",
+              "managerName": "tigbits711",
+              "pick": "Falcons ML over Panthers",
+              "result": "loss"
+            },
+            {
+              "managerID": "990522132113240064",
+              "managerName": "ChuckLeady",
+              "pick": "Bateman Over 38.5 Receiving Yards vs Saints",
+              "result": "win"
+            },
+            {
+              "managerID": "992838327420121088",
+              "managerName": "jafallon",
+              "pick": "Bears Over 26.5 vs Minnesota",
+              "result": "loss"
+            },
+            {
+              "managerID": "887911442844925952",
+              "managerName": "jfaoro",
+              "pick": "Bucky Irving Anytime TD vs Cleveland",
+              "result": "loss"
+            },
+            {
+              "managerID": "992186573034688512",
+              "managerName": "CamMacIntosh",
+              "pick": "Caleb Williams Anytime TD vs Minnesota",
+              "result": "loss"
+            },
+            {
+              "managerID": "991503715234271232",
+              "managerName": "billm8",
+              "pick": "DeAndre Hopkins Over 76.5 Receiving Yards vs Houston",
+              "result": "loss"
+            }
+          ]
+        }
+      ]
     },
     {
       "year": "2025",
