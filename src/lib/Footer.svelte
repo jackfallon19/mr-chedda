@@ -37,14 +37,14 @@
 		<nav class="flex flex-wrap items-center justify-center gap-x-1 gap-y-2 mb-6 text-sm">
 			{#each tabs as tab, i}
 				{#if !tab.nest}
-					<button class="px-3 py-1 rounded-full text-text-muted hover:text-text hover:bg-surface-2 transition-colors" onclick={() => goto(tab.dest)}>{tab.label}</button>
+					<button class="px-3 py-1 text-text-muted hover:text-text hover:underline underline-offset-4 transition-colors" onclick={() => goto(tab.dest)}>{tab.label}</button>
 				{:else}
 					{#each tab.children as child}
 						{#if child.label != "Managers" || managers.length > 0}
 							{#if child.label == "Go to Sleeper"}
-								<button class="px-3 py-1 rounded-full text-text-muted hover:text-text hover:bg-surface-2 transition-colors" onclick={() => window.location = child.dest}>{child.label}</button>
+								<button class="px-3 py-1 text-text-muted hover:text-text hover:underline underline-offset-4 transition-colors" onclick={() => window.location = child.dest}>{child.label}</button>
 							{:else}
-								<button class="px-3 py-1 rounded-full text-text-muted hover:text-text hover:bg-surface-2 transition-colors" onclick={() => goto(child.dest)}>{child.label}</button>
+								<button class="px-3 py-1 text-text-muted hover:text-text hover:underline underline-offset-4 transition-colors" onclick={() => goto(child.dest)}>{child.label}</button>
 							{/if}
 						{/if}
 					{/each}

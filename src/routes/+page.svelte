@@ -31,113 +31,87 @@
 	}
 </style>
 
-<!-- hero -->
-<section class="relative overflow-hidden px-4 sm:px-8 pt-14 pb-16 border-b border-border">
-	<div class="relative max-w-4xl mx-auto text-center">
-		<span class="inline-block text-xs font-semibold tracking-[0.2em] uppercase text-primary mb-4">
+<!-- masthead -->
+<section class="px-4 sm:px-8 pt-16 pb-12 border-b border-border">
+	<div class="max-w-[1200px] mx-auto">
+		<p class="kicker text-lg sm:text-xl mb-3">
 			{#await nflState}
-				Loading season...
+				Loading season&hellip;
 			{:then s}
 				NFL {s.season} &middot; {s.season_type === 'pre' ? 'Preseason' : s.season_type === 'post' ? 'Postseason' : (s.week > 0 ? `Week ${s.week}` : 'Preseason')}
 			{:catch}
 				&nbsp;
 			{/await}
-		</span>
-		<h1 class="font-display font-black uppercase leading-[0.95] tracking-tight text-5xl sm:text-6xl md:text-7xl">
+		</p>
+		<h1 class="font-serif font-medium tracking-[-0.03em] leading-[0.92] text-[clamp(3rem,9vw,7rem)] max-w-4xl">
 			{leagueName}
 		</h1>
-		<div class="mt-8 flex items-center justify-center gap-3">
+		<div class="mt-10 flex flex-wrap items-center gap-3">
 			<Button href="/matchups">
-				View Matchups
+				Matchups
 				<span class="material-icons text-base">arrow_forward</span>
 			</Button>
 			<Button href="/rivalry" variant="ghost">Head-to-Head</Button>
+			<Button href="/parlay-history" variant="ghost">Parlay History</Button>
 		</div>
 	</div>
 </section>
 
 <div class="max-w-[1200px] mx-auto px-4 sm:px-8 py-12">
-	<div class="flex flex-col lg:flex-row lg:items-start gap-8">
+	<div class="flex flex-col lg:flex-row lg:items-start gap-x-14 gap-y-12">
 		<!-- welcome text -->
-		<div class="flex-1 min-w-0 text-text-muted leading-relaxed [&_p]:mb-3 [&_p:first-child]:text-xl [&_p:first-child]:font-semibold [&_p:first-child]:text-text">
+		<div class="flex-1 min-w-0 text-text-muted leading-relaxed [&_p]:mb-3 [&_p:first-child]:font-serif [&_p:first-child]:text-2xl [&_p:first-child]:leading-snug [&_p:first-child]:text-text">
 			{@html homepageText }
 		</div>
 
-		<!-- champion / loser history -->
-		<div class="w-full lg:w-[420px] lg:shrink-0 space-y-5">
-			{#await waitForAll(podiumsData, leagueTeamManagersData)}
-				<div class="rounded-3xl border border-border bg-surface p-5 shadow-xl shadow-black/20">
-					<p class="text-center text-text-muted text-sm">Retrieving awards...</p>
+		<!-- ledgers -->
+		<div class="w-full lg:w-[400px] lg:shrink-0 space-y-10">
+			<section>
+				<div class="section-head">
+					<h2>Preseason Dress Odds</h2>
+					<span class="aside">{dressOdds.length} entrants</span>
 				</div>
+				<div class="grid grid-cols-2 gap-x-8">
+					{#each [dressOddsLeft, dressOddsRight] as col, c}
+						<table class="ledger w-full text-sm border-collapse">
+							<tbody>
+								{#each col as team, i}
+									<tr>
+										<td class="w-5 text-text-faint text-xs">{c * 5 + i + 1}</td>
+										<td class="font-medium text-text">{team.name}</td>
+										<td class="text-right font-semibold text-primary-hover">{team.odds}</td>
+									</tr>
+								{/each}
+							</tbody>
+						</table>
+					{/each}
+				</div>
+			</section>
+
+			{#await waitForAll(podiumsData, leagueTeamManagersData)}
+				<p class="text-text-faint text-sm italic">Retrieving awards&hellip;</p>
 			{:then [podiums, leagueTeamManagers]}
 				{#if podiums.length}
-					<!-- preseason odds -->
-					<div class="rounded-3xl border border-border bg-surface p-5 shadow-xl shadow-black/20">
-						<p class="text-xs font-semibold uppercase tracking-widest text-text-faint mb-3">Preseason Dress Odds</p>
-						<div class="grid grid-cols-2 gap-x-4">
-							<table class="w-full text-sm border-collapse">
-								<tbody>
-									{#each dressOddsLeft as team}
-										<tr class="border-t border-border first:border-t-0">
-											<td class="py-2 pr-2 font-semibold text-text">{team.name}</td>
-											<td class="py-2 text-right font-bold text-primary">{team.odds}</td>
-										</tr>
-									{/each}
-								</tbody>
-							</table>
-							<table class="w-full text-sm border-collapse">
-								<tbody>
-									{#each dressOddsRight as team}
-										<tr class="border-t border-border first:border-t-0">
-											<td class="py-2 pr-2 font-semibold text-text">{team.name}</td>
-											<td class="py-2 text-right font-bold text-primary">{team.odds}</td>
-										</tr>
-									{/each}
-								</tbody>
-							</table>
-						</div>
-					</div>
-
-					<!-- winners -->
-					<div class="rounded-3xl border border-border bg-surface p-5 shadow-xl shadow-black/20">
-						<p class="text-xs font-semibold uppercase tracking-widest text-text-faint mb-3">Winner of Dinna with Chedda</p>
-						<div class="overflow-x-auto">
-							<table class="w-full text-sm border-collapse">
+					{#each [
+						{ title: 'Winner of Dinna with Chedda', key: 'champion' },
+						{ title: 'Dress Bitch', key: 'toilet' },
+					] as list}
+						<section>
+							<div class="section-head">
+								<h2>{list.title}</h2>
+							</div>
+							<table class="ledger w-full text-sm border-collapse">
 								<tbody>
 									{#each podiums as podium, i}
-										<tr class="border-t border-border first:border-t-0 {i === 0 ? 'bg-primary-dim/40' : ''}">
-											<td class="py-2 pr-3 font-bold {i === 0 ? 'text-primary' : 'text-text'}">{podium.year}</td>
-											<td class="py-2">
-												<button
-													class="text-left font-semibold hover:text-primary transition-colors"
-													onclick={() => {if(managers.length) gotoManager({year: podium.year, leagueTeamManagers, rosterID: parseInt(podium.champion)})}}
-												>
-													{getTeamFromTeamManagers(leagueTeamManagers, podium.champion, podium.year).name}
-												</button>
-											</td>
-										</tr>
-									{/each}
-								</tbody>
-							</table>
-						</div>
-					</div>
-
-					<!-- losers -->
-					<div class="rounded-3xl border border-border bg-surface p-5 shadow-xl shadow-black/20">
-						<p class="text-xs font-semibold uppercase tracking-widest text-text-faint mb-3">Dress Bitch</p>
-						<div class="overflow-x-auto">
-							<table class="w-full text-sm border-collapse">
-								<tbody>
-									{#each podiums as podium, i}
-										<tr class="border-t border-border first:border-t-0 {i === 0 ? 'bg-primary-dim/40' : ''}">
-											<td class="py-2 pr-3 font-bold {i === 0 ? 'text-primary' : 'text-text'}">{podium.year}</td>
-											<td class="py-2">
-												{#if podium.toilet}
+										<tr>
+											<td class="w-14 {i === 0 ? 'text-primary-hover font-semibold' : 'text-text-faint'}">{podium.year}</td>
+											<td>
+												{#if podium[list.key]}
 													<button
-														class="text-left font-semibold hover:text-primary transition-colors"
-														onclick={() => {if(managers.length) gotoManager({year: podium.year, leagueTeamManagers, rosterID: parseInt(podium.toilet)})}}
+														class="text-left font-medium hover:text-primary-hover transition-colors {i === 0 ? 'text-text' : 'text-text-muted'}"
+														onclick={() => {if(managers.length) gotoManager({year: podium.year, leagueTeamManagers, rosterID: parseInt(podium[list.key])})}}
 													>
-														{getTeamFromTeamManagers(leagueTeamManagers, podium.toilet, podium.year).name}
+														{getTeamFromTeamManagers(leagueTeamManagers, podium[list.key], podium.year).name}
 													</button>
 												{:else}
 													<span class="text-text-faint">&mdash;</span>
@@ -147,17 +121,13 @@
 									{/each}
 								</tbody>
 							</table>
-						</div>
-					</div>
+						</section>
+					{/each}
 				{:else}
-					<div class="rounded-3xl border border-border bg-surface p-5 shadow-xl shadow-black/20">
-						<p class="text-center text-text-muted text-sm">No former champs.</p>
-					</div>
+					<p class="text-text-muted text-sm italic">No former champs.</p>
 				{/if}
 			{:catch error}
-				<div class="rounded-3xl border border-border bg-surface p-5 shadow-xl shadow-black/20">
-					<p class="text-center text-danger text-sm">Something went wrong: {error.message}</p>
-				</div>
+				<p class="text-danger text-sm">Something went wrong: {error.message}</p>
 			{/await}
 		</div>
 	</div>

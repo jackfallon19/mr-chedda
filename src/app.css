@@ -51,6 +51,17 @@
 	--color-danger: var(--danger);
 	--color-warning: var(--warning);
 	--font-display: 'Archivo', 'Inter', system-ui, sans-serif;
+	--font-serif: 'Fraunces', 'Iowan Old Style', Georgia, serif;
+
+	/* editorial: hairlines and tight corners instead of floating, shadowed cards */
+	--radius-md: 3px;
+	--radius-lg: 3px;
+	--radius-xl: 4px;
+	--radius-2xl: 4px;
+	--radius-3xl: 6px;
+	--shadow-lg: 0 0 #0000;
+	--shadow-xl: 0 0 #0000;
+	--shadow-2xl: 0 0 #0000;
 }
 
 html {
@@ -65,15 +76,8 @@ body {
 }
 
 body {
-	/* soft brand fade at the very top of every page, so the nav sits
-	   inside the same wash of color as the content below it rather
-	   than reading as a separate boxed-off bar */
-	background-image: linear-gradient(180deg, var(--primary-dim) 0%, transparent 480px);
-	background-repeat: no-repeat;
-}
-
-body {
 	margin: 0;
+	font-variant-numeric: tabular-nums;
 	font-family: 'Inter', system-ui, -apple-system, sans-serif;
 	-webkit-font-smoothing: antialiased;
 }
@@ -95,4 +99,45 @@ body {
 }
 .page-transition {
 	animation: page-in 0.35s ease-out;
+}
+
+/* Editorial type kit. Serif italic carries kickers and section breaks. */
+.serif {
+	font-family: var(--font-serif);
+	font-optical-sizing: auto;
+}
+.kicker {
+	font-family: var(--font-serif);
+	font-style: italic;
+	font-weight: 400;
+	color: var(--primary-hover);
+	letter-spacing: 0.005em;
+}
+.section-head {
+	display: flex;
+	align-items: baseline;
+	gap: 0.75rem;
+	padding-bottom: 0.6rem;
+	border-bottom: 1px solid var(--text);
+}
+.section-head h2 {
+	font-family: var(--font-serif);
+	font-style: italic;
+	font-weight: 500;
+	font-size: 1.5rem;
+	line-height: 1.1;
+	letter-spacing: -0.01em;
+}
+.section-head .aside {
+	margin-left: auto;
+	font-size: 0.75rem;
+	color: var(--text-faint);
+}
+.ledger td,
+.ledger th {
+	padding: 0.45rem 0;
+	border-top: 1px solid var(--border-c);
+}
+.ledger tr:first-child td {
+	border-top: 0;
 }

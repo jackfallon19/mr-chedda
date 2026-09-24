@@ -1,11 +1,11 @@
 <script>
 	let { href = null, variant = 'primary', class: className = '', children, ...rest } = $props();
 
-	const base = 'inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-semibold transition-all duration-200 active:scale-[0.97]';
+	const base = 'inline-flex items-center gap-2 rounded-sm px-5 py-2.5 text-sm font-semibold transition-colors duration-150';
 	const variants = {
-		primary: 'bg-primary text-on-primary hover:bg-primary-hover shadow-lg shadow-primary/20',
-		ghost: 'bg-surface-2 text-text hover:bg-surface-3 border border-border',
-		outline: 'border border-primary/50 text-primary hover:bg-primary/10',
+		primary: 'bg-text text-bg hover:bg-primary-hover',
+		ghost: 'border border-text text-text hover:bg-text hover:text-bg',
+		outline: 'border border-primary text-primary-hover hover:bg-primary-dim',
 	};
 </script>
 

@@ -1,3 +1,15 @@
+> **Status: implemented** (commit `928f63f`, refined since). This file is the original brief and is kept
+> as history. Where it now differs from the code, the code and `design/DESIGN-PRINCIPLES.md` win.
+> Changes since this was written:
+> - Season 2024 (`weeks: []`) is still in the data, but 2026 now has real weeks. Adding a week is
+>   documented in `docs/PARLAY-DATA-GUIDE.md`.
+> - The season select defaults to the newest season that has weeks, not the first in the array.
+> - The Current Season / All-Time tab switch stays deleted. All-Time is a ledger section at the bottom
+>   of the page, built from `flattenWeeks()`.
+> - Typography changed site-wide: section headings are Fraunces serif italic, not `font-display`
+>   bold. Buttons, cards and nav are flat with hairline rules, no shadows. See `DESIGN-PRINCIPLES.md`.
+> - `payout` is still `0` everywhere and there is still no odds field.
+
 # Parlay History redesign — implementation brief
 
 Rebuild the `/parlay-history` page in this repo. A finished visual mockup of the target
@@ -41,7 +53,7 @@ Facts the current UI gets wrong or ignores:
   On the current data this yields 51 Prop / 16 Moneyline / 10 Spread / 7 Total.
 - `thrownBy` is **not** always one of the pickers — in W11 jenright19 threw the ticket
   without having a leg in it. Don't couple those.
-- Season 2024 exists with `weeks: []`. Handle an empty season without crashing.
+- Season 2024 exists with `weeks: []` (2026 is now populated). Handle an empty season without crashing.
 - `Spent` = **$10 for each week a manager was `thrownBy`**, which is how the current
   code computes it. Keep that. It is a last-place penalty from the fantasy league, not
   a skill signal, so it must never be charted against performance.

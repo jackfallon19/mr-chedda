@@ -112,7 +112,7 @@
 </script>
 
 <div class="max-w-6xl mx-auto px-4 py-8">
-	<h1 class="font-display font-black uppercase tracking-tight text-3xl sm:text-4xl mb-6">Who Owns Who?</h1>
+	<h1 class="font-serif font-medium tracking-tight text-3xl sm:text-4xl mb-6">Who Owns Who?</h1>
 
 	{#if !playerOne || !playerTwo}
 		<HeatMap {headToHead} onSelect={selectPair} />

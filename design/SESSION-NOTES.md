@@ -33,10 +33,9 @@ Claude sessions) to read.
 
 ## Homepage: "Preseason Dress Odds"
 
-- `src/routes/+page.svelte`: added a card above the winners/losers cards,
-  styled identically (`rounded-3xl border border-border bg-surface p-5
-  shadow-xl shadow-black/20`), with the 10 manager/odds pairs split into two
-  5-row tables side by side (Enright +450 down to Johnny +1200).
+- Originally a card above the winners/losers cards. It is now a ledger section
+  (see "Editorial restyle" below) with the 10 manager/odds pairs ranked in two
+  5-row columns (Enright +450 down to Johnny +1200).
 
 ## Parlay History page — full rebuild
 
@@ -67,16 +66,44 @@ the app, never routed to or imported).
 
 ### 2026 season + All-Time ledger
 
-- `src/lib/data/parlayHistory.json`: added an empty `{"year": "2026",
-  "weeks": []}` season block (2026 hasn't started, so there's nothing in it
-  yet — it just renders the existing "no tickets yet" empty state).
+- `src/lib/data/parlayHistory.json`: added a 2026 season block. It started
+  empty and now has Weeks 1-2 (commit `e93c964` and later data updates).
 - Added a new "All-Time manager ledger" section at the bottom of the page,
   built from `flattenWeeks(parlayHistory.seasons)` across every season. It
   shares the same table/drawer markup as the per-season ledger via a Svelte
   `{#snippet ledgerTable(...)}`, parameterized by which stats/season/expand-
-  state to use. Today it's identical to the 2025-only numbers; it will
-  absorb 2026 automatically as that season's weeks get data — no code
-  changes needed when that happens.
+  state to use. It now includes 2026 automatically as weeks are added; no code changes
+  are needed per week.
+
+## Editorial restyle + Parlay History link (this session)
+
+Decision: stay on SvelteKit/Svelte 5/Tailwind 4 rather than moving to React.
+Direction and the hard-avoid list are recorded in `design/DESIGN-PRINCIPLES.md`.
+
+- `src/app.css`: removed the orange wash behind the header; added the
+  `--font-serif` token (Fraunces); `@theme` now zeroes `--shadow-lg/xl/2xl`
+  and tightens radii, so older pages flatten without edits; `tabular-nums` on
+  `body`; new `.serif`, `.kicker`, `.section-head`, `.ledger` classes.
+- `src/app.html`: loads Fraunces (roman + italic, opsz axis).
+- `src/routes/+page.svelte`: rewritten. Left-aligned masthead with a serif
+  italic season kicker and a large serif title; the CTA row is now Matchups,
+  Head-to-Head and **Parlay History** (`/parlay-history`). Dress Odds, Winner
+  of Dinna and Dress Bitch are ledger sections, not cards; the two
+  winner/loser tables share one `{#each}`.
+- `src/lib/ui/Button.svelte`: square corners, solid dark / outlined variants,
+  no shadow.
+- Nav (`Nav/index`, `NavLarge`, `NavSmall`) and `Footer.svelte`: underline
+  active state instead of orange pills; serif italic brand; flat dropdown.
+- `Rivalry`, `Standings`, `ParlayHistory` headings: `font-serif` (h1) and
+  serif italic (h2). `MatchupsAndBrackets` toggle: flat, dark-when-active.
+- Not yet restyled: see the status table in `DESIGN-PRINCIPLES.md`.
+- Verified: dev server serves `/`, `/parlay-history`, `/rivalry`, `/matchups`
+  with 200. `vite build` compiles but the Vercel adapter refuses local Node 24;
+  use Node 22 or let Vercel build. Not yet checked visually in a browser.
+
+## Adding parlay data
+
+See `docs/PARLAY-DATA-GUIDE.md`.
 
 ## Git history for this work (on `master`)
 
@@ -85,6 +112,8 @@ the app, never routed to or imported).
 - `4fda43a` → `f25e74b`: head-to-head phantom-ties fix.
 - `f25e74b` → `928f63f`: Parlay History full rebuild, 2026 season block,
   All-Time ledger.
+- `928f63f` → `e93c964`: parlay data updates.
+- Uncommitted at time of writing: the editorial restyle above and `docs/`.
 
 All work in this session was front-end only, scoped to this fork of
 nmelhado/league-page.

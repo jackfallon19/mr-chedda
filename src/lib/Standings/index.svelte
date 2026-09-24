@@ -45,7 +45,7 @@
 </script>
 
 <div class="max-w-5xl mx-auto px-4 py-8">
-    <h1 class="font-display font-black uppercase tracking-tight text-2xl sm:text-3xl mb-6">{year ?? ''} {leagueName} Standings</h1>
+    <h1 class="font-serif font-medium tracking-tight text-2xl sm:text-3xl mb-6">{year ?? ''} {leagueName} Standings</h1>
 
     {#if loading}
         <div class="max-w-md mx-auto py-20 text-center text-text-muted">Loading standings...</div>

@@ -4,13 +4,16 @@ This directory contains the data for the Weekly Parlay History feature.
 
 ## Overview
 
-The league does a weekly parlay where each manager contributes one leg to a parlay bet. Each manager pays $10 per week to participate. This data tracks:
+The league does a weekly parlay where each manager contributes one leg to a parlay bet. The manager who *throws* (places) the ticket in a given week pays $10; that is a last-place penalty, not a skill signal. This data tracks:
 - Who participated each week
 - What pick each manager made
 - Whether each individual pick won or lost
 - Whether the overall parlay won or lost
 - Who threw (placed) the parlay
-- Cumulative spending and win/loss records
+- Win/loss records and spend are derived in `src/lib/ParlayHistory/parlayStats.js`, not stored
+
+> **To add a week or season, follow `docs/PARLAY-DATA-GUIDE.md`.** It has the nickname table, the
+> exact steps, and a validation script. This file only documents the schema.
 
 ## File Structure
 
@@ -72,13 +75,13 @@ The league does a weekly parlay where each manager contributes one leg to a parl
 ### Week Object
 | Field | Type | Description | Example |
 |-------|------|-------------|---------|
-| `week` | number | Week number of the season | `5` |
+| `week` | number | Unique, increasing key within the season. Need not equal the NFL week in `seasonWeek` (2025 has gaps) | `5` |
 | `seasonWeek` | string | Formatted display string | `"Season 2025 Week 5"` |
 | `date` | string | Date the parlay was placed (YYYY-MM-DD) | `"2025-10-07"` |
 | `parlayResult` | string | Overall parlay outcome: `"win"` or `"loss"` | `"loss"` |
 | `payout` | number | Total payout if parlay won (0 if lost) | `0` or `850` |
 | `thrownBy` | object | Manager who placed the parlay | See below |
-| `picks` | array | All individual picks in the parlay | See below |
+| `picks` | array | The legs. 6-10 per week; managers with no leg are omitted | See below |
 
 ### ThrownBy Object
 | Field | Type | Description | Example |
@@ -274,3 +277,11 @@ Before committing, validate your JSON:
 ## Questions?
 
 If you have questions about the data structure or need to make changes to the schema, check the main project documentation or contact the developer.
+
+## Notes
+
+- `payout` is `0` on every row and there is no odds field, so nothing shows "would have paid".
+- Bet type (Spread / Moneyline / Total / Prop) is inferred from the `pick` text by `betType()`; there is
+  no field for it. Word picks so they classify correctly (`ML`, `Over`, `Under`, `-3.5`).
+- `thrownBy` need not be one of the pickers.
+- Seasons: 2026 (in progress), 2025 (10 weeks), 2024 (empty).

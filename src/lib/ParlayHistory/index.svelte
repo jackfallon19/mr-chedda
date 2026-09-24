@@ -124,7 +124,7 @@
 	<div class="flex flex-wrap items-end justify-between gap-6">
 		<div>
 			<p class="mono text-[11px] tracking-[0.16em] uppercase text-text-muted mb-3">Mr. Chedda &middot; Weekly Parlay</p>
-			<h1 class="font-display font-black uppercase tracking-tight text-4xl sm:text-5xl">Weekly Parlay History</h1>
+			<h1 class="font-serif font-medium tracking-tight text-4xl sm:text-5xl">Weekly Parlay History</h1>
 			<p class="text-text-muted max-w-[48ch] mt-3">
 				One ticket a week. Whoever finished last in points the week before puts up the $10. Every leg has to hit.
 			</p>
@@ -160,7 +160,7 @@
 	<!-- 1. week rail -->
 	<section>
 		<div class="flex items-baseline justify-between gap-4 flex-wrap mb-1">
-			<h2 class="font-display text-xl font-bold">The season so far</h2>
+			<h2 class="font-serif italic font-medium text-2xl tracking-tight">The season so far</h2>
 			<span class="mono text-xs text-text-faint">Legs hit / legs on the ticket</span>
 		</div>
 		<p class="text-text-muted text-sm max-w-[74ch] mb-5">
@@ -206,7 +206,7 @@
 	<!-- 2. ticket -->
 	<section bind:this={ticketSection}>
 		<div class="flex items-baseline justify-between gap-4 flex-wrap mb-1">
-			<h2 class="font-display text-xl font-bold">{selectedWeekData ? `Week ${selectedWeekData.week}` : 'This week\'s ticket'}</h2>
+			<h2 class="font-serif italic font-medium text-2xl tracking-tight">{selectedWeekData ? `Week ${selectedWeekData.week}` : 'This week\'s ticket'}</h2>
 			{#if selectedWeekData}
 				<span class="mono text-xs text-text-faint">{selectedWeekData.date} &middot; thrown by {selectedWeekData.thrownBy?.managerName ?? '—'}</span>
 			{/if}
@@ -301,7 +301,7 @@
 
 	<!-- 3. trend chart -->
 	<section>
-		<h2 class="font-display text-xl font-bold mb-1">How close we got</h2>
+		<h2 class="font-serif italic font-medium text-2xl tracking-tight mb-1">How close we got</h2>
 		<p class="text-text-muted text-sm max-w-[74ch] mb-5">
 			Ghost bars are the legs on each ticket; solid bars are the ones that hit. A ticket only pays when the solid bar reaches the top of the ghost.
 		</p>
@@ -407,7 +407,7 @@
 	<!-- 4. heatmap -->
 	<section>
 		<div class="flex items-start justify-between gap-4 flex-wrap mb-1">
-			<h2 class="font-display text-xl font-bold">Every leg, every week</h2>
+			<h2 class="font-serif italic font-medium text-2xl tracking-tight">Every leg, every week</h2>
 			<div class="flex gap-4 flex-wrap text-xs text-text-muted">
 				<span class="inline-flex items-center gap-1.5"><i class="inline-block w-2.5 h-2.5 rounded-sm" style="background-color: var(--heat-win-strong);"></i>Hit</span>
 				<span class="inline-flex items-center gap-1.5"><i class="inline-block w-2.5 h-2.5 rounded-sm" style="background-color: var(--heat-loss-strong);"></i>Missed</span>
@@ -477,7 +477,7 @@
 	<!-- 5. leg win rate -->
 	<section>
 		<div class="flex items-baseline justify-between gap-4 flex-wrap mb-1">
-			<h2 class="font-display text-xl font-bold">Who is actually carrying</h2>
+			<h2 class="font-serif italic font-medium text-2xl tracking-tight">Who is actually carrying</h2>
 			<span class="mono text-xs text-text-faint">Share of a manager's own legs that cashed</span>
 		</div>
 		<p class="text-text-muted text-sm max-w-[74ch] mb-5">Sorted by leg win rate, with the field's midpoint marked at 50%.</p>
@@ -548,7 +548,7 @@
 	<!-- 6. manager ledger -->
 	<section>
 		<div class="flex items-baseline justify-between gap-4 flex-wrap mb-1">
-			<h2 class="font-display text-xl font-bold">Manager ledger</h2>
+			<h2 class="font-serif italic font-medium text-2xl tracking-tight">Manager ledger</h2>
 			<span class="mono text-xs text-text-faint">Click a row for the full pick log</span>
 		</div>
 		<p class="text-text-muted text-sm mb-5">Streak is the current run. Spent is $10 for every week you were the one throwing it.</p>
@@ -566,7 +566,7 @@
 	<!-- 7. all-time manager ledger -->
 	<section>
 		<div class="flex items-baseline justify-between gap-4 flex-wrap mb-1">
-			<h2 class="font-display text-xl font-bold">All-Time manager ledger</h2>
+			<h2 class="font-serif italic font-medium text-2xl tracking-tight">All-Time manager ledger</h2>
 			<span class="mono text-xs text-text-faint">{allTimeRecord.wins}&ndash;{allTimeRecord.losses} tickets across every season</span>
 		</div>
 		<p class="text-text-muted text-sm mb-5">

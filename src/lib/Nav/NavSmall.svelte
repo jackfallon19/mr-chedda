@@ -15,7 +15,7 @@
 </script>
 
 <button
-	class="p-2 rounded-full text-text-muted hover:text-text hover:bg-surface-2 transition-colors"
+	class="p-2 rounded-sm text-text-muted hover:text-text hover:bg-surface-2 transition-colors"
 	aria-label="Open menu"
 	onclick={() => (open = true)}
 >
@@ -32,7 +32,7 @@
 		transition-transform duration-300 {open ? 'translate-x-0' : '-translate-x-full'}"
 >
 	<div class="px-5 py-4 border-b border-border">
-		<span class="text-lg font-bold">{leagueName}</span>
+		<span class="font-serif italic text-xl">{leagueName}</span>
 	</div>
 
 	<nav class="py-2">

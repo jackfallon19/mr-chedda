@@ -65,30 +65,30 @@
 {:else}
     {#if matchupWeeks.length}
         <div class="flex flex-col items-center gap-3 my-8">
-            <div class="inline-flex rounded-full border border-border bg-surface p-1 shadow-sm">
+            <div class="inline-flex rounded-sm border border-border bg-surface p-0.5">
                 <button
-                    class="px-6 py-2.5 rounded-full font-display text-sm font-extrabold uppercase tracking-wide transition-colors {selection == 'regular' ? 'bg-primary text-on-primary shadow' : 'text-text-muted hover:text-text'}"
+                    class="px-6 py-2.5 rounded-sm font-display text-xs font-bold uppercase tracking-widest transition-colors {selection == 'regular' ? 'bg-text text-bg' : 'text-text-muted hover:text-text'}"
                     onclick={() => changeSelection('regular')}
                 >
                     Regular Season
                 </button>
                 <button
-                    class="px-6 py-2.5 rounded-full font-display text-sm font-extrabold uppercase tracking-wide transition-colors {selection == 'champions' || selection == 'losers' ? 'bg-primary text-on-primary shadow' : 'text-text-muted hover:text-text'}"
+                    class="px-6 py-2.5 rounded-sm font-display text-xs font-bold uppercase tracking-widest transition-colors {selection == 'champions' || selection == 'losers' ? 'bg-text text-bg' : 'text-text-muted hover:text-text'}"
                     onclick={() => changeSelection('champions')}
                 >
                     Playoffs
                 </button>
             </div>
             {#if selection == 'champions' || selection == 'losers'}
-                <div class="inline-flex rounded-full border border-border bg-surface p-1 shadow-sm">
+                <div class="inline-flex rounded-sm border border-border bg-surface p-0.5">
                     <button
-                        class="px-6 py-2.5 rounded-full font-display text-sm font-extrabold uppercase tracking-wide transition-colors {selection == 'champions' ? 'bg-primary text-on-primary shadow' : 'text-text-muted hover:text-text'}"
+                        class="px-6 py-2.5 rounded-sm font-display text-xs font-bold uppercase tracking-widest transition-colors {selection == 'champions' ? 'bg-text text-bg' : 'text-text-muted hover:text-text'}"
                         onclick={() => changeSelection('champions')}
                     >
                         Dinna Bracket
                     </button>
                     <button
-                        class="px-6 py-2.5 rounded-full font-display text-sm font-extrabold uppercase tracking-wide transition-colors {selection == 'losers' ? 'bg-primary text-on-primary shadow' : 'text-text-muted hover:text-text'}"
+                        class="px-6 py-2.5 rounded-sm font-display text-xs font-bold uppercase tracking-widest transition-colors {selection == 'losers' ? 'bg-text text-bg' : 'text-text-muted hover:text-text'}"
                         onclick={() => changeSelection('losers')}
                     >
                         Dress Yoffs
