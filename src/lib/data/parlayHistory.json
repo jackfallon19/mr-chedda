@@ -142,6 +142,79 @@
               "result": "loss"
             }
           ]
+        },
+        {
+          "week": 3,
+          "seasonWeek": "Season 2026 Week 3",
+          "date": "2026-09-27",
+          "parlayResult": "loss",
+          "payout": 0,
+          "thrownBy": {
+            "managerID": "992838327420121088",
+            "managerName": "jafallon"
+          },
+          "picks": [
+            {
+              "managerID": "992838327420121088",
+              "managerName": "jafallon",
+              "pick": "Jettas ATTD",
+              "result": "loss"
+            },
+            {
+              "managerID": "992186573034688512",
+              "managerName": "CamMacIntosh",
+              "pick": "Panthers ML",
+              "result": "loss"
+            },
+            {
+              "managerID": "990524585852354560",
+              "managerName": "ryebread00",
+              "pick": "Saints raiders o",
+              "result": "win"
+            },
+            {
+              "managerID": "990522132113240064",
+              "managerName": "ChuckLeady",
+              "pick": "Bucs ML",
+              "result": "loss"
+            },
+            {
+              "managerID": "990520804859232256",
+              "managerName": "tigbits711",
+              "pick": "Ladd ATTD",
+              "result": "loss"
+            },
+            {
+              "managerID": "990704123299336192",
+              "managerName": "jenright19",
+              "pick": "Jags ML",
+              "result": "loss"
+            },
+            {
+              "managerID": "991882566162558976",
+              "managerName": "jwhill",
+              "pick": "Swift aTTD",
+              "result": "loss"
+            },
+            {
+              "managerID": "991503715234271232",
+              "managerName": "billm8",
+              "pick": "Panthers -1.5",
+              "result": "loss"
+            },
+            {
+              "managerID": "887911442844925952",
+              "managerName": "jfaoro",
+              "pick": "Bills -6.5",
+              "result": "win"
+            },
+            {
+              "managerID": "990753572016943104",
+              "managerName": "Nolanwest",
+              "pick": "Josh Allen O 33.5 Rushing",
+              "result": "loss"
+            }
+          ]
         }
       ]
     },
