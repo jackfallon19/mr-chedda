@@ -360,12 +360,12 @@
 							<thead>
 								<tr class="text-text-faint">
 									<th class="text-left font-medium pb-2">Week</th>
-									<th class="text-right font-medium pb-2 pl-0.5 sm:pl-0 whitespace-nowrap">Date</th>
-									<th class="text-right font-medium pb-2 pl-0.5 sm:pl-0 whitespace-nowrap">Hit</th>
-									<th class="text-right font-medium pb-2 pl-0.5 sm:pl-0 whitespace-nowrap">Legs</th>
-									<th class="text-right font-medium pb-2 pl-0.5 sm:pl-0 whitespace-nowrap">Hit rate</th>
-									<th class="text-right font-medium pb-2 pl-0.5 sm:pl-0 whitespace-nowrap">Thrown by</th>
-									<th class="text-right font-medium pb-2 pl-0.5 sm:pl-0 whitespace-nowrap">Payout</th>
+									<th class="text-right font-medium pb-2 pl-2 sm:pl-0 whitespace-nowrap">Date</th>
+									<th class="text-right font-medium pb-2 pl-2 sm:pl-0 whitespace-nowrap">Hit</th>
+									<th class="text-right font-medium pb-2 pl-2 sm:pl-0 whitespace-nowrap">Legs</th>
+									<th class="text-right font-medium pb-2 pl-2 sm:pl-0 whitespace-nowrap"><span class="sm:hidden">Rate</span><span class="hidden sm:inline">Hit rate</span></th>
+									<th class="text-right font-medium pb-2 pl-2 sm:pl-0 whitespace-nowrap">Thrown by</th>
+									<th class="text-right font-medium pb-2 pl-2 sm:pl-0 whitespace-nowrap"><span class="sm:hidden">Pay</span><span class="hidden sm:inline">Payout</span></th>
 								</tr>
 							</thead>
 							<tbody>
