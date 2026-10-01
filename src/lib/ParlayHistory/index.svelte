@@ -356,28 +356,28 @@
 				<details class="mt-3.5 pt-2.5 border-t border-surface-3">
 					<summary class="text-xs text-text-muted cursor-pointer">Show the numbers</summary>
 					<div class="overflow-x-auto mt-2">
-						<table class="w-full mono text-xs" style="font-variant-numeric: tabular-nums;">
+						<table class="w-full mono text-[10.5px] sm:text-xs" style="font-variant-numeric: tabular-nums;">
 							<thead>
 								<tr class="text-text-faint">
 									<th class="text-left font-medium pb-2">Week</th>
-									<th class="text-right font-medium pb-2">Date</th>
-									<th class="text-right font-medium pb-2">Hit</th>
-									<th class="text-right font-medium pb-2">Legs</th>
-									<th class="text-right font-medium pb-2">Hit rate</th>
-									<th class="text-right font-medium pb-2">Thrown by</th>
-									<th class="text-right font-medium pb-2">Payout</th>
+									<th class="text-right font-medium pb-2 pl-1.5 sm:pl-0 whitespace-nowrap">Date</th>
+									<th class="text-right font-medium pb-2 pl-1.5 sm:pl-0 whitespace-nowrap">Hit</th>
+									<th class="text-right font-medium pb-2 pl-1.5 sm:pl-0 whitespace-nowrap">Legs</th>
+									<th class="text-right font-medium pb-2 pl-1.5 sm:pl-0 whitespace-nowrap">Hit rate</th>
+									<th class="text-right font-medium pb-2 pl-1.5 sm:pl-0 whitespace-nowrap">Thrown by</th>
+									<th class="text-right font-medium pb-2 pl-1.5 sm:pl-0 whitespace-nowrap">Payout</th>
 								</tr>
 							</thead>
 							<tbody>
 								{#each weeks as w}
 									<tr class="border-t border-surface-2">
 										<td class="py-1.5">{W(w.week)}</td>
-										<td class="text-right py-1.5">{w.date}</td>
-										<td class="text-right py-1.5">{w.hit}</td>
-										<td class="text-right py-1.5">{w.total}</td>
-										<td class="text-right py-1.5">{Math.round(w.hitRate * 100)}%</td>
-										<td class="text-right py-1.5">{w.thrownBy?.managerName ?? '—'}</td>
-										<td class="text-right py-1.5">${w.payout}</td>
+										<td class="text-right py-1.5 pl-1.5 sm:pl-0 whitespace-nowrap">{w.date}</td>
+										<td class="text-right py-1.5 pl-1.5 sm:pl-0 whitespace-nowrap">{w.hit}</td>
+										<td class="text-right py-1.5 pl-1.5 sm:pl-0 whitespace-nowrap">{w.total}</td>
+										<td class="text-right py-1.5 pl-1.5 sm:pl-0 whitespace-nowrap">{Math.round(w.hitRate * 100)}%</td>
+										<td class="text-right py-1.5 pl-1.5 sm:pl-0 whitespace-nowrap">{w.thrownBy?.managerName ?? '—'}</td>
+										<td class="text-right py-1.5 pl-1.5 sm:pl-0 whitespace-nowrap">${w.payout}</td>
 									</tr>
 								{/each}
 							</tbody>
