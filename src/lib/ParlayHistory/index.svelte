@@ -584,17 +584,17 @@
 
 {#snippet ledgerTable(list, seasonObj, expandedID, setExpanded, showYear)}
 	{#if list.length}
-		<div class="rounded-2xl border border-border bg-surface shadow-xl shadow-black/20 p-[22px] overflow-x-auto">
-			<table class="w-full text-sm border-collapse">
+		<div class="rounded-2xl border border-border bg-surface shadow-xl shadow-black/20 p-3 sm:p-[22px] overflow-x-auto">
+			<table class="w-full text-xs sm:text-sm border-collapse">
 				<thead>
-					<tr class="text-text-faint text-[10.5px] tracking-[.1em] uppercase">
-						<th class="text-left font-medium pb-2 w-6"></th>
+					<tr class="text-text-faint text-[10.5px] tracking-[.05em] sm:tracking-[.1em] uppercase whitespace-nowrap">
+						<th class="text-left font-medium pb-2 w-7"></th>
 						<th class="text-left font-medium pb-2">Manager</th>
-						<th class="text-right font-medium pb-2">Weeks</th>
-						<th class="text-right font-medium pb-2">W&ndash;L</th>
-						<th class="text-right font-medium pb-2">Win %</th>
-						<th class="text-right font-medium pb-2">Streak</th>
-						<th class="text-right font-medium pb-2">Spent</th>
+						<th class="text-right font-medium pb-2 pl-2 whitespace-nowrap">Weeks</th>
+						<th class="text-right font-medium pb-2 pl-2 whitespace-nowrap">W&ndash;L</th>
+						<th class="text-right font-medium pb-2 pl-2 whitespace-nowrap">Win %</th>
+						<th class="text-right font-medium pb-2 pl-2 whitespace-nowrap">Streak</th>
+						<th class="text-right font-medium pb-2 pl-2 whitespace-nowrap">Spent</th>
 						<th class="w-5"></th>
 					</tr>
 				</thead>
@@ -614,8 +614,8 @@
 								}
 							}}
 						>
-							<td class="py-2.5 text-text-faint">{i + 1}</td>
-							<td class="py-2.5 font-semibold">
+							<td class="py-2.5 pr-2 text-text-faint">{i + 1}</td>
+							<td class="py-2.5 font-semibold break-all sm:break-normal">
 								<button
 									class="hover:text-primary transition-colors"
 									onclick={(e) => {
@@ -626,17 +626,17 @@
 									{s.managerName}
 								</button>
 							</td>
-							<td class="py-2.5 text-right">{s.weeks}</td>
-							<td class="py-2.5 text-right">{s.wins}&ndash;{s.losses}</td>
-							<td class="py-2.5 text-right">{Math.round(s.winPct * 100)}%</td>
-							<td class="py-2.5 text-right">
+							<td class="py-2.5 pl-2 text-right whitespace-nowrap">{s.weeks}</td>
+							<td class="py-2.5 pl-2 text-right whitespace-nowrap">{s.wins}&ndash;{s.losses}</td>
+							<td class="py-2.5 pl-2 text-right whitespace-nowrap">{Math.round(s.winPct * 100)}%</td>
+							<td class="py-2.5 pl-2 text-right whitespace-nowrap">
 								{#if s.streak}
 									<span class="text-[10px] px-1.5 py-0.5 rounded font-semibold {s.streak.result === 'win' ? 'bg-accent/15 text-accent' : 'bg-danger/15 text-danger'}">
 										{s.streak.result === 'win' ? 'W' : 'L'}{s.streak.count}
 									</span>
 								{/if}
 							</td>
-							<td class="py-2.5 text-right">${s.spent}</td>
+							<td class="py-2.5 pl-2 text-right whitespace-nowrap">${s.spent}</td>
 							<td class="py-2.5 text-text-faint transition-transform {expanded ? 'rotate-90 text-primary-hover' : ''}">&#9656;</td>
 						</tr>
 						{#if expanded}
