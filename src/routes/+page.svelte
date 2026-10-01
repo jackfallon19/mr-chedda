@@ -93,7 +93,7 @@
 			{:then [podiums, leagueTeamManagers]}
 				{#if podiums.length}
 					{#each [
-						{ title: 'Winner of Dinna with Chedda', key: 'champion' },
+						{ title: 'Winner of Dinna with Mr. Chedda', key: 'champion' },
 						{ title: 'Dress Bitch', key: 'toilet' },
 					] as list}
 						<section>

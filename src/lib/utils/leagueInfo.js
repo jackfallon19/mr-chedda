@@ -7,7 +7,7 @@ export const enableBlog = true; // requires VITE_CONTENTFUL_ACCESS_TOKEN and VIT
 
 /*   STEP 2   */
 export const homepageText = `
-  <p>Congrats to the 2025 Winner of Dinna with Chedda ALPHA for winning his second dinner in two years, the first was micky mouse. So congrats on your first.</p>
+  <p>Congrats to the 2025 Winner of Dinna with Mr. Chedda ALPHA for winning his second dinner in two years, the first was micky mouse. So congrats on your first.</p>
   <p>Fallon wore the dress as a courtesy for the rest of the league, no doubt he will be never be that drunk and shameful in Wrigley again. If we are looking at his 2026 draft, there is no doubt he will be back where he belongs, the yoffs.</p>
   <p>There was a lot of ~interesting~ picks to start the season off. Boos took London at 4 and Lead is loaded with Lions, nothing shocking there. Bill is basically putting his team in Puka's hands, hopefully he only bites his mouthguard to start the season. Nolan has Pitts - he will play out of his mind in the dress yoffs. This is a historical fact. Faoro thinks he outsmarted everyone which means he really just reached on every pick, bold strategy cotton we will see how it pays off for him. Johnny put his fiath in Josh Allen, hopefully Hailee Steinfield can bring in another MVP season. Cam has Trey McBride, thats the highlight of the squad. Riley has 4 wheelchairs on his roster. Enright took Jacobs 3rd round and bought a Harley - checks out if you ask me.</p>
   <p>The season is officially underway and the race to not wear the dress is upon us.</p>
