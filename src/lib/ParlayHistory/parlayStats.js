@@ -102,7 +102,7 @@ export const recordByType = (season, managerID) => {
  * @returns {Array<{ managerID, managerName, weeks, wins, losses, winPct, spent, streak, bestStreak }>}
  */
 export const managerStats = (season) => {
-	const weeks = season?.weeks ?? [];
+	const weeks = (season?.weeks ?? []).filter((week) => week.status !== 'not-thrown');
 	const stats = {};
 
 	for (const week of weeks) {
@@ -137,17 +137,20 @@ export const managerStats = (season) => {
 export const weekStats = (season) => {
 	const weeks = season?.weeks ?? [];
 	return weeks.map((w) => {
-		const hit = w.picks.filter((p) => p.result === 'win').length;
-		const total = w.picks.length;
+		const picks = w.picks ?? [];
+		const hit = picks.filter((p) => p.result === 'win').length;
+		const total = picks.length;
 		return {
 			week: w.week,
+			status: w.status ?? 'thrown',
+			note: w.note ?? null,
 			seasonWeek: w.seasonWeek,
 			date: w.date,
 			result: w.parlayResult,
 			thrownBy: w.thrownBy,
 			stake: 10,
 			payout: w.payout,
-			picks: w.picks,
+			picks,
 			hit,
 			total,
 			hitRate: total ? hit / total : 0,
@@ -161,6 +164,7 @@ export const weekStats = (season) => {
  */
 export const seasonRecord = (season) => {
 	const weeks = season?.weeks ?? [];
-	const wins = weeks.filter((w) => w.parlayResult === 'win').length;
-	return { wins, losses: weeks.length - wins };
+	const tickets = weeks.filter((w) => w.status !== 'not-thrown');
+	const wins = tickets.filter((w) => w.parlayResult === 'win').length;
+	return { wins, losses: tickets.length - wins };
 };
