@@ -117,3 +117,8 @@ See `docs/PARLAY-DATA-GUIDE.md`.
 
 All work in this session was front-end only, scoped to this fork of
 nmelhado/league-page.
+
+## Parlay data: Season 2026 Weeks 7 and 8 (Nov 4, 2026)
+
+- Added Week 7 (placed Oct 25, thrown by Enright) and Week 8 (placed Nov 1, thrown by Faoro) to `src/lib/data/parlayHistory.json`. Both tickets lost. Cam had no pick in Week 7 and is omitted per the data guide. Weeks 5-6 have no recorded parlay data (no results were sent).
+- Vercel production build for the data commit (7fb66d1) failed: Vercel auto-bumped builds from Node 24 to Node 26 (the `engines` range `>=v20.0.0` opts into automatic major upgrades), and the `smui-theme` prepare script crashes on Node 26 (`ReferenceError: require is not defined in ES module scope` in yargs). Fixed by pinning `engines.node` to `22.x` in `package.json`.
