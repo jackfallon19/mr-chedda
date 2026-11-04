@@ -225,6 +225,146 @@
           "payout": 0,
           "thrownBy": null,
           "picks": []
+        },
+        {
+          "week": 7,
+          "seasonWeek": "Season 2026 Week 7",
+          "date": "2026-10-25",
+          "parlayResult": "loss",
+          "payout": 0,
+          "thrownBy": {
+            "managerID": "990704123299336192",
+            "managerName": "jenright19"
+          },
+          "picks": [
+            {
+              "managerID": "990522132113240064",
+              "managerName": "ChuckLeady",
+              "pick": "JJ McCarthy 200+ Passing Yards @ Texans",
+              "result": "win"
+            },
+            {
+              "managerID": "990704123299336192",
+              "managerName": "jenright19",
+              "pick": "Lions ML vs Packers",
+              "result": "win"
+            },
+            {
+              "managerID": "990524585852354560",
+              "managerName": "ryebread00",
+              "pick": "Sam LaPorta Anytime TD vs Packers",
+              "result": "loss"
+            },
+            {
+              "managerID": "991503715234271232",
+              "managerName": "billm8",
+              "pick": "George Kittle Anytime TD @ Falcons",
+              "result": "loss"
+            },
+            {
+              "managerID": "991882566162558976",
+              "managerName": "jwhill",
+              "pick": "Panthers ML vs Bucs",
+              "result": "loss"
+            },
+            {
+              "managerID": "990520804859232256",
+              "managerName": "tigbits711",
+              "pick": "Colts ML vs Vikings",
+              "result": "loss"
+            },
+            {
+              "managerID": "990753572016943104",
+              "managerName": "Nolanwest",
+              "pick": "Chris Godwin Anytime TD @ Panthers",
+              "result": "loss"
+            },
+            {
+              "managerID": "887911442844925952",
+              "managerName": "jfaoro",
+              "pick": "Nico Collins 70+ Receiving Yards vs Giants",
+              "result": "loss"
+            },
+            {
+              "managerID": "992838327420121088",
+              "managerName": "jafallon",
+              "pick": "Giants/Texans Over 42.5",
+              "result": "win"
+            }
+          ]
+        },
+        {
+          "week": 8,
+          "seasonWeek": "Season 2026 Week 8",
+          "date": "2026-11-01",
+          "parlayResult": "loss",
+          "payout": 0,
+          "thrownBy": {
+            "managerID": "887911442844925952",
+            "managerName": "jfaoro"
+          },
+          "picks": [
+            {
+              "managerID": "990522132113240064",
+              "managerName": "ChuckLeady",
+              "pick": "Puka Nacua Anytime TD vs Chargers",
+              "result": "win"
+            },
+            {
+              "managerID": "990704123299336192",
+              "managerName": "jenright19",
+              "pick": "Joe Burrow 260+ Passing Yards vs Titans",
+              "result": "win"
+            },
+            {
+              "managerID": "990524585852354560",
+              "managerName": "ryebread00",
+              "pick": "D'Andre Swift Anytime TD vs Seahawks",
+              "result": "win"
+            },
+            {
+              "managerID": "991503715234271232",
+              "managerName": "billm8",
+              "pick": "Omar Cooper Jr 50+ Receiving Yards vs Raiders",
+              "result": "loss"
+            },
+            {
+              "managerID": "991882566162558976",
+              "managerName": "jwhill",
+              "pick": "Zay Flowers Anytime TD @ Bills",
+              "result": "loss"
+            },
+            {
+              "managerID": "990520804859232256",
+              "managerName": "tigbits711",
+              "pick": "Michael Wilson 2+ TDs @ Cowboys",
+              "result": "loss"
+            },
+            {
+              "managerID": "992186573034688512",
+              "managerName": "CamMacIntosh",
+              "pick": "Javonte Williams 2+ TDs vs Cardinals",
+              "result": "loss"
+            },
+            {
+              "managerID": "990753572016943104",
+              "managerName": "Nolanwest",
+              "pick": "Jaylen Warren 15+ Carries vs Browns",
+              "result": "win"
+            },
+            {
+              "managerID": "887911442844925952",
+              "managerName": "jfaoro",
+              "pick": "Bills -3 vs Ravens",
+              "result": "win"
+            },
+            {
+              "managerID": "992838327420121088",
+              "managerName": "jafallon",
+              "pick": "Browns/Steelers Over 38.5",
+              "result": "loss"
+            }
+          ]
         }
       ]
     },
