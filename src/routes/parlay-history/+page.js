@@ -1,5 +1,3 @@
-export const ssr = false;
-
 import parlayHistory from '$lib/data/parlayHistory.json';
 import { getLeagueTeamManagers } from '$lib/utils/helper';
 
