@@ -220,11 +220,145 @@
           "week": 4,
           "seasonWeek": "Season 2026 Week 4",
           "date": "2026-10-04",
+          "parlayResult": "loss",
+          "payout": 0,
+          "thrownBy": {
+            "managerID": "887911442844925952",
+            "managerName": "jfaoro"
+          },
+          "picks": [
+            {
+              "managerID": "990522132113240064",
+              "managerName": "ChuckLeady",
+              "pick": "Josh Allen ATTD vs Pats",
+              "result": "win"
+            },
+            {
+              "managerID": "990704123299336192",
+              "managerName": "jenright19",
+              "pick": "Kyle Monagai  ATTD vs Jets",
+              "result": "win"
+            },
+            {
+              "managerID": "990524585852354560",
+              "managerName": "ryebread00",
+              "pick": "Packers @ Bucs o38.5",
+              "result": "loss"
+            },
+            {
+              "managerID": "991882566162558976",
+              "managerName": "jwhill",
+              "pick": "Bears -3.5 vs Jets",
+              "result": "win"
+            },
+            {
+              "managerID": "990520804859232256",
+              "managerName": "tigbits711",
+              "pick": "Texans -3.5 vs Cowboys",
+              "result": "loss"
+            },
+            {
+              "managerID": "992186573034688512",
+              "managerName": "CamMacIntosh",
+              "pick": "Kalif Raymond ATTD vs Jets",
+              "result": "loss"
+            },
+            {
+              "managerID": "990753572016943104",
+              "managerName": "Nolanwest",
+              "pick": "Saquon Barkley ATTD vs Rams",
+              "result": "win"
+            },
+            {
+              "managerID": "887911442844925952",
+              "managerName": "jfaoro",
+              "pick": "Bengals -3.5 vs Jaguars",
+              "result": "loss"
+            },
+            {
+              "managerID": "992838327420121088",
+              "managerName": "jafallon",
+              "pick": "Dolphins +10 @ Vikings",
+              "result": "win"
+            }
+          ]
+        },
+        {
+          "week": 5,
+          "seasonWeek": "Season 2026 Week 5",
+          "date": "",
           "status": "not-thrown",
           "note": "No parlay thrown - Faoro fell asleep.",
           "payout": 0,
           "thrownBy": null,
           "picks": []
+        },
+        {
+          "week": 6,
+          "seasonWeek": "Season 2026 Week 6",
+          "date": "2026-10-18",
+          "parlayResult": "loss",
+          "payout": 0,
+          "thrownBy": {
+            "managerID": "887911442844925952",
+            "managerName": "jfaoro"
+          },
+          "picks": [
+            {
+              "managerID": "990522132113240064",
+              "managerName": "ChuckLeady",
+              "pick": "Browns ML vs Ravens",
+              "result": "win"
+            },
+            {
+              "managerID": "990704123299336192",
+              "managerName": "jenright19",
+              "pick": "Luther Burden 10+ rec yards @ Falcons",
+              "result": "win"
+            },
+            {
+              "managerID": "990524585852354560",
+              "managerName": "ryebread00",
+              "pick": "D’Andre Swift ATTD @ Falcons",
+              "result": "win"
+            },
+            {
+              "managerID": "991882566162558976",
+              "managerName": "jwhill",
+              "pick": "London 91+ rec yards vs Bears",
+              "result": "loss"
+            },
+            {
+              "managerID": "990520804859232256",
+              "managerName": "tigbits711",
+              "pick": "Rams +8.5 vs Cardinals",
+              "result": "win"
+            },
+            {
+              "managerID": "992186573034688512",
+              "managerName": "CamMacIntosh",
+              "pick": "Kalif Raymond ATTD @ Atlanta",
+              "result": "loss"
+            },
+            {
+              "managerID": "990753572016943104",
+              "managerName": "Nolanwest",
+              "pick": "Ashton Jeanty ATTD vs Bills",
+              "result": "win"
+            },
+            {
+              "managerID": "887911442844925952",
+              "managerName": "jfaoro",
+              "pick": "Tetairoa McMillian 65+ rec yards @ Eagles",
+              "result": "win"
+            },
+            {
+              "managerID": "992838327420121088",
+              "managerName": "jafallon",
+              "pick": "CeeDee Lamb ATTD @ Packers",
+              "result": "loss"
+            }
+          ]
         },
         {
           "week": 7,
