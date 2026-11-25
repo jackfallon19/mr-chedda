@@ -574,6 +574,67 @@
           ]
         },
         {
+          "week": 10,
+          "seasonWeek": "Season 2026 Week 10",
+          "date": "2026-11-15",
+          "parlayResult": "loss",
+          "payout": 0,
+          "thrownBy": {
+            "managerID": "991882566162558976",
+            "managerName": "jwhill"
+          },
+          "picks": [
+            {
+              "managerID": "990522132113240064",
+              "managerName": "ChuckLeady",
+              "pick": "Bengals ML @ Steelers",
+              "result": "win"
+            },
+            {
+              "managerID": "990524585852354560",
+              "managerName": "ryebread00",
+              "pick": "Rams D/ST Anytime TD @ Cardinals",
+              "result": "loss"
+            },
+            {
+              "managerID": "991503715234271232",
+              "managerName": "billm8",
+              "pick": "JSN Anytime TD @ Raiders",
+              "result": "win"
+            },
+            {
+              "managerID": "991882566162558976",
+              "managerName": "jwhill",
+              "pick": "McCaffrey Anytime TD @ Cowboys",
+              "result": "win"
+            },
+            {
+              "managerID": "990520804859232256",
+              "managerName": "tigbits711",
+              "pick": "Bowers Anytime TD vs Seahawks",
+              "result": "loss"
+            },
+            {
+              "managerID": "992186573034688512",
+              "managerName": "CamMacIntosh",
+              "pick": "Cowboys ML vs Niners",
+              "result": "loss"
+            },
+            {
+              "managerID": "990753572016943104",
+              "managerName": "Nolanwest",
+              "pick": "Hampton Anytime TD @ Ravens",
+              "result": "win"
+            },
+            {
+              "managerID": "992838327420121088",
+              "managerName": "jafallon",
+              "pick": "Higgins Anytime TD @ Steelers",
+              "result": "loss"
+            }
+          ]
+        },
+        {
           "week": 11,
           "seasonWeek": "Season 2026 Week 11",
           "date": "2026-11-22",
